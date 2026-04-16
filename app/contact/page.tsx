@@ -1,61 +1,39 @@
-import { ArrowUpRight, Phone, Mail, MapPin, Clock, Send, MessageCircle } from 'lucide-react'
+import { ArrowUpRight, Phone } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { ContactForm } from './ContactForm'
+import type { Metadata } from 'next'
 
-export const metadata = {
-  title: "Contact Us | Ceylon Tea Land",
-  description: "Get in touch with Ceylon Tea Land for premium bulk tea, retail partnerships, and private labeling inquiries.",
-  keywords: ["Contact Ceylon Tea Land", "Wholesale Tea", "Private Label Tea", "Sri Lanka Tea Exporter"],
-  authors: [{ name: "Ceylon Tea Land" }],
+export const metadata: Metadata = {
+  title: 'Contact Us — Ceylon Tea Inquiries',
+  description: 'Contact Ceylon Tea Land for bulk tea imports, retail partnerships, private labeling, and wholesale inquiries. Our tea experts are ready to help you find the perfect blend.',
+  keywords: ['Contact Ceylon Tea Land', 'Tea Import Inquiry', 'Bulk Tea Supplier Contact', 'Private Label Tea Sri Lanka', 'Wholesale Tea Contact', 'Ceylon Tea Partnership'],
+  alternates: {
+    canonical: '/contact',
+  },
   openGraph: {
-    title: "Contact Us | Ceylon Tea Land",
-    description: "Get in touch with Ceylon Tea Land for premium bulk tea, retail partnerships, and private labeling inquiries.",
-    url: "https://ceylontealand.com/contact",
-    siteName: "Ceylon Tea Land",
+    title: 'Contact Us | Ceylon Tea Land',
+    description: 'Get in touch with our tea experts for bulk imports, retail partnerships, and private labeling inquiries.',
+    url: 'https://ceylontealand.com/contact',
+    siteName: 'Ceylon Tea Land',
     images: [
       {
-        url: "/og-image.png",
+        url: '/heroimg.png',
         width: 1200,
         height: 630,
-        alt: "Contact Ceylon Tea Land",
+        alt: 'Contact Ceylon Tea Land',
       },
     ],
-    locale: "en_US",
-    type: "website",
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Us | Ceylon Tea Land',
+    description: 'Get in touch with our tea experts for bulk imports, retail partnerships, and private labeling inquiries.',
+    images: ['/heroimg.png'],
   },
 };
-
-const footerNavColumns = [
-  {
-    title: 'Navigation',
-    links: [
-      { label: 'Home', href: '/' },
-      { label: 'Ceylon Tea', href: '/ceylon-tea' },
-      { label: 'About Us', href: '/about' },
-      { label: 'Events', href: '/events' },
-      { label: 'Our Tea', href: '/our-tea' },
-      { label: 'Branding', href: '/branding' },
-    ],
-  },
-  {
-    title: 'Products',
-    links: [
-      { label: 'Tea Bags', href: '/#tea-bags' },
-      { label: 'Bulk Tea', href: '/#bulk-tea' },
-      { label: 'Green Tea', href: '/#green-tea' },
-    ],
-  },
-  {
-    title: 'Account & Support',
-    links: [
-      { label: 'Contact Us', href: '/contact' },
-    ],
-  },
-  {
-    title: 'Contact Details',
-    links: [],
-  },
-];
 
 export default function ContactPage() {
   return (
@@ -82,8 +60,8 @@ export default function ContactPage() {
               {/* "Prefer a call?" Card */}
               <div className="bg-white p-6 rounded-2xl shadow-sm border border-neutral-100 mt-auto max-w-md">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="font-bold text-lg">Prefer a call?</h3>
-                  <div className="bg-neutral-100 p-2 rounded-full">
+                  <h2 className="font-bold text-lg">Prefer a call?</h2>
+                  <div className="bg-neutral-100 p-2 rounded-full" aria-hidden="true">
                     <Phone className="w-5 h-5" />
                   </div>
                 </div>
@@ -92,62 +70,14 @@ export default function ContactPage() {
                 </p>
                 <a href="tel:+94777734180" className="flex items-center justify-between w-full bg-neutral-50 hover:bg-neutral-100 border border-neutral-200 px-4 py-3 rounded-xl transition-colors group">
                   <span className="font-semibold text-sm">Call (+94) 77 773 4180</span>
-                  <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-neutral-900 transition-colors" />
+                  <ArrowUpRight className="w-4 h-4 text-neutral-400 group-hover:text-neutral-900 transition-colors" aria-hidden="true" />
                 </a>
               </div>
             </div>
 
             {/* Right Column: Form */}
             <div className="lg:col-span-7">
-              <div className="bg-white rounded-[2rem] p-8 md:p-12 shadow-xl shadow-neutral-200/50 relative overflow-hidden">
-                <form className="space-y-8">
-                  <div className="space-y-6">
-                    <div className="group">
-                      <label className="text-xs font-bold uppercase tracking-wider text-neutral-500 mb-2 block">Full Name</label>
-                      <input
-                        type="text"
-                        placeholder="Enter your full name"
-                        className="w-full border-b border-neutral-200 py-3 text-lg focus:outline-none focus:border-neutral-900 transition-colors bg-transparent placeholder:text-neutral-300"
-                      />
-                    </div>
-
-                    <div className="group">
-                      <label className="text-xs font-bold uppercase tracking-wider text-neutral-500 mb-2 block">Email Address</label>
-                      <input
-                        type="email"
-                        placeholder="Enter email address"
-                        className="w-full border-b border-neutral-200 py-3 text-lg focus:outline-none focus:border-neutral-900 transition-colors bg-transparent placeholder:text-neutral-300"
-                      />
-                    </div>
-
-                    <div className="group">
-                      <label className="text-xs font-bold uppercase tracking-wider text-neutral-500 mb-2 block">Interest</label>
-                      <select className="w-full border-b border-neutral-200 py-3 text-lg focus:outline-none focus:border-neutral-900 transition-colors bg-transparent text-neutral-900">
-                        <option>Bulk Tea Import</option>
-                        <option>Retail Partnership</option>
-                        <option>Private Labeling</option>
-                        <option>General Inquiry</option>
-                      </select>
-                    </div>
-
-                    <div className="group">
-                      <label className="text-xs font-bold uppercase tracking-wider text-neutral-500 mb-2 block">Message</label>
-                      <textarea
-                        placeholder="Tell us about your project"
-                        rows={4}
-                        className="w-full border-b border-neutral-200 py-3 text-lg focus:outline-none focus:border-neutral-900 transition-colors bg-transparent placeholder:text-neutral-300 resize-none"
-                      ></textarea>
-                    </div>
-                  </div>
-
-                  <button className="w-full bg-neutral-900 text-white h-14 rounded-xl font-bold text-lg flex items-center justify-between px-6 hover:bg-neutral-800 transition-all group">
-                    <span>Send Message</span>
-                    <div className="bg-white/20 p-2 rounded-lg group-hover:bg-white/30 transition-colors">
-                      <ArrowUpRight className="w-5 h-5" />
-                    </div>
-                  </button>
-                </form>
-              </div>
+              <ContactForm />
             </div>
           </div>
 
@@ -155,9 +85,9 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-2 gap-12 mt-24 border-t border-neutral-200 pt-12">
             <div>
               <span className="text-xs font-bold tracking-widest uppercase text-neutral-500 mb-4 block">/ Office</span>
-              <p className="text-xl font-medium text-neutral-900 max-w-xs">
+              <address className="text-xl font-medium text-neutral-900 max-w-xs not-italic">
                 No. 51, Fairfield Gardens,<br /> Colombo - 8, Sri Lanka
-              </p>
+              </address>
             </div>
             <div>
               <span className="text-xs font-bold tracking-widest uppercase text-neutral-500 mb-4 block">/ Operating Hours</span>
@@ -185,132 +115,10 @@ export default function ContactPage() {
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
+            title="Ceylon Tea Land office location on Google Maps"
             className="border-0 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
           ></iframe>
         </div>
-
-        {/* Footer */}
-        <footer className="tea-footer">
-          <div className="tea-footer__container">
-            <div className="tea-footer__banner">
-              <div className="tea-footer__banner-left">
-                <div className="tea-footer__cta">
-                  <p className="tea-footer__cta-heading">
-                    Premium Sri Lankan teas, crafted for retailers, specialty cafes, and hospitality brands who expect
-                    unforgettable flavour in every cup.
-                  </p>
-                  <Link href="/contact" className="tea-footer__cta-button">
-                    Contact Us
-                  </Link>
-                </div>
-              </div>
-
-              <div className="tea-footer__banner-right">
-                <Image
-                  src="/tea_footer_banner.png"
-                  alt="Pouring Ceylon Tea"
-                  width={600}
-                  height={400}
-                  className="tea-footer__image"
-                />
-              </div>
-            </div>
-
-            <nav className="tea-footer__nav" aria-label="Footer">
-              {footerNavColumns.map((column) => (
-                <div key={column.title} className="tea-footer__nav-column">
-                  <p className="tea-footer__badge">{column.title}</p>
-                  <div className="tea-footer__nav-list">
-                    {column.links.map((link) => (
-                      <Link key={link.label} href={link.href} className="tea-footer__nav-link">
-                        {link.label}
-                      </Link>
-                    ))}
-                  </div>
-                  {column.title === 'Contact Details' && (
-                    <div className="tea-footer__contact-info mt-6 text-neutral-400 space-y-3 text-sm leading-relaxed">
-                      <p>
-                        <strong>Head Office -</strong> No. 51, Fairfield Gardens,<br />
-                        Colombo - 8, Sri Lanka.
-                      </p>
-                      <p>
-                        <strong>Hot line -</strong> +94 77 773 4180<br />
-                        <strong>Tel -</strong> +94 11 253 1682
-                      </p>
-                      <p>
-                        <strong>E-mail -</strong> info@ceylontealand.com<br />
-                        <strong>Fax -</strong> +94 11 254 7909
-                      </p>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </nav>
-
-            <div className="tea-footer__info">
-              <div className="tea-footer__meta flex-wrap gap-y-2">
-                <span>© 2025 Ceylon Tea Land.</span>
-                <span className="hidden sm:inline">|</span>
-                <a
-                  href="https://www.arcai.agency"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  title="ARC AI - Web Design & Digital Solutions"
-                  className="inline-flex items-center hover:opacity-80 transition-opacity"
-                >
-                  Designed & Developed by{' '}
-                  <Image
-                    src="/arc logo.png"
-                    alt="ARC AI - Web Design & Digital Solutions"
-                    width={350}
-                    height={180}
-                    className="tea-footer__meta-logo scale-150 ml-3 origin-left w-auto"
-                  />
-                </a>
-              </div>
-              <div className="tea-footer__socials">
-                <a
-                  href="https://www.facebook.com/drrumie"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="tea-footer__social-link"
-                  aria-label="Facebook"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    className="tea-footer__social-icon"
-                  >
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                  </svg>
-                </a>
-                <a
-                  href="https://www.instagram.com/ceylontealand?utm_medium=copy_link"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="tea-footer__social-link"
-                  aria-label="Instagram"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    className="tea-footer__social-icon"
-                  >
-                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-                    <circle cx="12" cy="12" r="3.5"></circle>
-                    <circle cx="17.5" cy="6.5" r="1"></circle>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-        </footer>
       </div>
     </main>
   )

@@ -3,25 +3,34 @@ import Image from 'next/image'
 import { Facebook, Instagram, Phone, Mail, MessageCircle, ArrowRight } from 'lucide-react'
 
 export const metadata = {
-  title: "About Us | Ceylon Tea Land",
-  description: "Learn about the legacy of Ceylon Tea Land. Pure Ceylon tea from Sri Lanka's finest highland estates.",
-  keywords: ["About Us", "Ceylon Tea Land", "Tea Exporter", "Sri Lanka"],
+  title: "About Us — Our Story & Heritage | Premium Tea Exporters",
+  description: "Discover the legacy of Ceylon Tea Land. Over 50 years of excellence exporting 100% pure Ceylon tea from Sri Lanka's finest highland estates to 40+ countries worldwide.",
+  keywords: ["About Ceylon Tea Land", "Ceylon Tea Land Team", "Sri Lanka Tea Estate", "Tea Export Company", "Ceylon Tea History", "Tea Manufacturer Sri Lanka", "Pure Ceylon Tea Heritage"],
   authors: [{ name: "Ceylon Tea Land" }],
+  alternates: {
+    canonical: "/about",
+  },
   openGraph: {
     title: "About Us | Ceylon Tea Land",
-    description: "Learn about the legacy of Ceylon Tea Land. Pure Ceylon tea from Sri Lanka's finest highland estates.",
+    description: "Discover the legacy of Ceylon Tea Land — Over 50 years of excellence exporting authentic Ceylon tea worldwide.",
     url: "https://ceylontealand.com/about",
     siteName: "Ceylon Tea Land",
     images: [
       {
-        url: "/og-image.png",
+        url: "/heroimg.png",
         width: 1200,
         height: 630,
-        alt: "About Ceylon Tea Land",
+        alt: "About Ceylon Tea Land — Our Story and Heritage",
       },
     ],
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Us | Ceylon Tea Land",
+    description: "Discover the legacy of Ceylon Tea Land — Over 50 years of excellence exporting authentic Ceylon tea worldwide.",
+    images: ["/heroimg.png"],
   },
 };
 
@@ -32,12 +41,14 @@ export default function AboutPage() {
       <section className="relative min-h-screen overflow-hidden flex items-end rounded-b-[60px] shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
         <Image
           src="/about-hero.webp"
-          alt="Ceylon Tea Garden"
+          alt="Lush green Ceylon tea gardens in the Sri Lankan highlands"
           fill
           className="object-cover"
+          priority
+          sizes="100vw"
         />
 
-        <div className="relative z-10 px-6 pb-16 lg:pb-24 ml-8">
+        <div className="relative z-10 px-4 md:px-6 pb-16 lg:pb-24 md:ml-8">
           <div className="max-w-3xl">
             <div className="space-y-8 rounded-3xl bg-white/85 p-8 text-neutral-900 shadow-xl backdrop-blur-md animate-in fade-in slide-in-from-bottom-8 duration-1000">
               <div className="space-y-4">
@@ -106,6 +117,8 @@ export default function AboutPage() {
                   alt="Ceylon Tea Journey and Heritage"
                   width={800}
                   height={500}
+                  loading="lazy"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
             </div>
@@ -128,6 +141,8 @@ export default function AboutPage() {
                       width={800}
                       height={450}
                       className="w-full aspect-[16/9] object-cover rounded-2xl shadow-xl"
+                      loading="lazy"
+                      sizes="(max-width: 768px) 100vw, 50vw"
                     />
                   </div>
                 </div>
@@ -227,6 +242,8 @@ export default function AboutPage() {
               width={1200}
               height={675}
               className="w-full h-auto object-contain"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 80vw, 960px"
             />
           </div>
         </div>
@@ -257,6 +274,8 @@ export default function AboutPage() {
                     alt={item.title}
                     fill
                     className="object-cover rounded-3xl group-hover:scale-105 transition-all duration-500"
+                    loading="lazy"
+                    sizes="160px"
                   />
                 </div>
                 <div className="transform group-hover:-translate-y-2 transition-transform duration-500">
@@ -315,6 +334,8 @@ export default function AboutPage() {
                     alt={member.name}
                     fill
                     className="object-cover object-center rounded-full transition-all duration-500"
+                    loading="lazy"
+                    sizes="224px"
                   />
                 </div>
                 <div className="w-full text-center transform group-hover:-translate-y-1 transition-transform duration-500">
@@ -350,13 +371,15 @@ export default function AboutPage() {
                   Celebrating our dedication to quality and innovation.
                 </p>
               </div>
-              <div className="bg-neutral-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 p-4 flex items-center justify-center h-64 border border-neutral-100">
+              <div className="bg-neutral-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex items-center justify-center h-80 lg:h-96 border border-neutral-100">
                 <Image
                   src="/about/awards.jpg"
-                  alt="Awards"
-                  width={400}
-                  height={300}
-                  className="max-h-full object-contain w-auto h-auto relative"
+                  alt="Ceylon Tea Land International Awards and Recognition"
+                  width={600}
+                  height={450}
+                  className="w-full h-full object-contain"
+                  loading="lazy"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
             </div>
@@ -367,18 +390,20 @@ export default function AboutPage() {
                 <span className="text-sm font-medium uppercase tracking-[0.3em] text-emerald-700 mb-4 block">
                   Certified Quality
                 </span>
-                <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-6">Quality Certifications</h2>
+                <h2 className="text-3xl lg:text-4xl font-bold text-neutral-900 mb-6">Certifications</h2>
                 <p className="text-lg text-neutral-600">
                   Rigorous standards validated by international certifications.
                 </p>
               </div>
-              <div className="bg-neutral-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 p-4 flex items-center justify-center h-64 border border-neutral-100">
+              <div className="bg-neutral-50 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 p-6 flex items-center justify-center h-80 lg:h-96 border border-neutral-100">
                 <Image
                   src="/about/certificates.jpg"
-                  alt="Certificates"
-                  width={400}
-                  height={300}
-                  className="max-h-full object-contain w-auto h-auto relative"
+                  alt="Ceylon Tea Land Quality Certifications — ISO and Export Standards"
+                  width={600}
+                  height={450}
+                  className="w-full h-full object-contain"
+                  loading="lazy"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
                 />
               </div>
             </div>
@@ -393,18 +418,18 @@ export default function AboutPage() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
-                  <Image src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Tea plantation" fill className="object-cover hover:scale-105 transition-transform duration-300" />
+                  <Image src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Scenic Ceylon tea plantation with rows of tea bushes" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover hover:scale-105 transition-transform duration-300" />
                 </div>
                 <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
-                  <Image src="/premium_authentic_experience.png" alt="Tea ceremony" fill className="object-cover hover:scale-105 transition-transform duration-300" />
+                  <Image src="/premium_authentic_experience.png" alt="Traditional Ceylon tea ceremony experience" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover hover:scale-105 transition-transform duration-300" />
                 </div>
               </div>
               <div className="space-y-4 pt-8">
                 <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
-                  <Image src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Tea processing" fill className="object-cover hover:scale-105 transition-transform duration-300" />
+                  <Image src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Artisan tea processing in a Sri Lankan tea factory" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover hover:scale-105 transition-transform duration-300" />
                 </div>
                 <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
-                  <Image src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Tea leaves" fill className="object-cover hover:scale-105 transition-transform duration-300" />
+                  <Image src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Fresh green tea leaves ready for hand-plucking" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover hover:scale-105 transition-transform duration-300" />
                 </div>
               </div>
             </div>

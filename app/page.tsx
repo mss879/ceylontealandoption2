@@ -4,21 +4,24 @@ import Image from 'next/image';
 import { CuratedProducts } from '@/components/curated-products';
 
 export const metadata = {
-  title: "Ceylon Tea Land | Authentic Ceylon Tea Exporter",
-  description: "Global Exporters of Authentic Ceylon Tea. Pure Ceylon tea from Sri Lanka's finest highland estates.",
-  keywords: ["Ceylon Tea", "Sri Lanka Tea", "Tea Exporter", "Pure Ceylon", "Black Tea", "Green Tea"],
+  title: "Premium Ceylon Tea Exporter from Sri Lanka",
+  description: "Global Exporters of Authentic Ceylon Tea. Pure Ceylon tea from Sri Lanka's finest highland estates. Bulk wholesale supply, private labeling, and premium tea bags for worldwide distribution.",
+  keywords: ["Ceylon Tea", "Sri Lanka Tea", "Tea Exporter", "Pure Ceylon", "Black Tea", "Green Tea", "Buy Ceylon Black Tea Online", "Authentic Sri Lankan Tea", "Premium Ceylon Tea Brand", "Wholesale Ceylon Tea Supplier", "Ceylon Tea Bulk Export", "Sri Lanka Tea Factory Direct", "Tea Bags Manufacturer Sri Lanka", "Organic Ceylon Tea"],
   authors: [{ name: "Ceylon Tea Land" }],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Ceylon Tea Land",
-    description: "Premium Ceylon tea from Sri Lanka's finest highland gardens.",
+    title: "Ceylon Tea Land | Premium Ceylon Tea Exporters",
+    description: "Global Exporters of Authentic Ceylon Tea. Premium highland tea delivered worldwide with export-grade consistency.",
     url: "https://ceylontealand.com",
     siteName: "Ceylon Tea Land",
     images: [
       {
-        url: "/og-image.png",
+        url: "/heroimg.png",
         width: 1200,
         height: 630,
-        alt: "Ceylon Tea Land",
+        alt: "Ceylon Tea Land — Premium Ceylon Tea Exporters from Sri Lanka",
       },
     ],
     locale: "en_US",
@@ -26,30 +29,30 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ceylon Tea Land",
-    description: "Premium Ceylon tea from Sri Lanka's finest highland gardens.",
-    images: ["/og-image.png"],
+    title: "Ceylon Tea Land | Premium Ceylon Tea Exporters",
+    description: "Global Exporters of Authentic Ceylon Tea from Sri Lanka's finest highland gardens.",
+    images: ["/heroimg.png"],
   },
 };
 
 const teaHighlights = [
   {
-    image: '/100_Pure_Ceylon.png',
+    image: '/100_Pure_Ceylon.webp',
     title: '100% Pure Ceylon',
     description: "Sourced directly from Sri Lanka's finest highland gardens for authentic flavor in every cup.",
   },
   {
-    image: '/Premium Quality.png',
+    image: '/Premium Quality.webp',
     title: 'Premium Quality',
     description: 'Hand-picked leaves processed with precision to meet uncompromising export-grade standards.',
   },
   {
-    image: '/Global Reach.png',
+    image: '/Global Reach.webp',
     title: 'Global Reach',
     description: 'Reliable international logistics ensure peak freshness for customers worldwide.',
   },
   {
-    image: '/Traditional Heritage.png',
+    image: '/Traditional Heritage.webp',
     title: 'Traditional Heritage',
     description: 'Generational craftsmanship blending legacy methods with modern quality stewardship.',
   },
@@ -130,18 +133,38 @@ const brandPartners = [
   {
     name: 'ZENZUR',
     href: 'https://zenzurceylon.com/',
-    logo: '/zenzur-logo.png',
+    logo: '/zenzur-logo.webp',
   },
   {
     name: 'RIVON',
-    href: './Item.html',
-    logo: '/rivon-logo.png',
+    href: '#',
+    logo: '/rivon-logo.webp',
   },
   {
     name: 'SUN DELMAR',
     href: 'https://sundelmar.ru/',
-    logo: '/sun-delmar-logo.png',
+    logo: '/sun-delmar-logo.webp',
   },
+];
+
+const partnerBrands = [
+  "ABBAS",
+  "abo malek",
+  "acumolli",
+  "bashkoff",
+  "boc",
+  "creatlur",
+  "cupful",
+  "dibir",
+  "fatimatea",
+  "firdows",
+  "golddinar",
+  "madam",
+  "magic tea",
+  "muhamadkhair",
+  "nansi",
+  "nazlin",
+  "rivonelite"
 ];
 
 export default function Home() {
@@ -150,11 +173,12 @@ export default function Home() {
       <main className="bg-white text-neutral-900">
         <section className="relative min-h-screen overflow-hidden flex items-end rounded-b-[60px] shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
           <Image
-            src="/heroimg.png"
-            alt="Tea fields in Sri Lanka"
+            src="/heroimg.webp"
+            alt="Scenic tea fields in the highlands of Sri Lanka"
             fill
             className="object-cover"
             priority
+            sizes="100vw"
           />
 
           <div className="relative z-10 px-4 md:px-6 pb-16 lg:pb-24 md:ml-8 w-full">
@@ -204,7 +228,7 @@ export default function Home() {
                   <div className="flex items-center gap-3 text-sm font-medium uppercase tracking-[0.2em] text-[#b58b54]">
                     <Image
                       src="https://cdn.prod.website-files.com/687847b9f15a8c8a903eac63/687e7e7dd3bff35d0286ffce_Vector%20(1).svg"
-                      alt=""
+                      alt="Ceylon Tea Land icon"
                       width={16}
                       height={16}
                       className="h-4 w-4"
@@ -225,12 +249,6 @@ export default function Home() {
                       <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                     </Link>
 
-                    <Link
-                      href="#contact"
-                      className="inline-flex items-center gap-3 rounded-full border border-[#d9c3a1] px-6 py-3 text-sm font-semibold text-neutral-900 transition hover:border-[#c2a680] hover:shadow-sm"
-                    >
-                      <span>Meet The Farmers</span>
-                    </Link>
                   </div>
                 </div>
 
@@ -271,6 +289,7 @@ export default function Home() {
                         alt={highlight.title}
                         fill
                         className="object-contain"
+                        sizes="112px"
                       />
                     </div>
                     <div>
@@ -318,12 +337,48 @@ export default function Home() {
                       alt={`${brand.name} logo`}
                       fill
                       className="logo-pulse mx-auto object-contain max-w-[260px] p-4"
+                      sizes="260px"
+                      loading="lazy"
                     />
                   </div>
                   <h3 className="relative text-lg font-semibold tracking-wide text-white">{brand.name}</h3>
                 </a>
               ))}
             </div>
+
+            {/* PARTNER BRANDS CAROUSEL */}
+            <div className="mt-32 border-t border-white/10 pt-20">
+              <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2 text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#b58b54] mb-12 backdrop-blur-md">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#b58b54] animate-pulse"></span>
+                Global Partners
+              </div>
+              
+              <div className="relative flex overflow-hidden group">
+                <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-neutral-950 to-transparent z-10"></div>
+                <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-neutral-950 to-transparent z-10"></div>
+                
+                <div className="flex animate-marquee whitespace-nowrap group-hover:[animation-play-state:paused]">
+                  {[...partnerBrands, ...partnerBrands, ...partnerBrands].map((brand, idx) => (
+                    <div 
+                      key={`${brand}-${idx}`} 
+                      className="mx-8 relative flex flex-col items-center justify-center w-[180px] sm:w-[240px] h-[120px] bg-white rounded-2xl p-2 md:p-3 transition duration-300 shadow-sm hover:shadow-md"
+                    >
+                      <div className="relative w-full h-full opacity-80 transition hover:opacity-100 z-10">
+                        <Image 
+                          src={`/partner logos/${brand}.webp`} 
+                          alt={brand} 
+                          fill
+                          className="object-contain"
+                          sizes="(max-width: 768px) 180px, 240px"
+                          loading="lazy"
+                        />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
           </div>
         </section>
 
@@ -470,109 +525,77 @@ export default function Home() {
           </div>
         </section>
 
-
-
-        <section className="relative bg-neutral-950 py-32 lg:py-48 overflow-hidden z-20 w-full border-t border-white/5">
-          {/* Background Elements */}
-          <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-emerald-900/20 via-neutral-950 to-neutral-950" />
-            <div className="absolute top-0 right-0 w-full h-full bg-[url('https://cdn.prod.website-files.com/68f050966cef2b325a99979d/68f050966cef2b325a999c2c_bg.png')] opacity-[0.03] bg-cover bg-center mix-blend-overlay" />
-          </div>
-
-          <div className="relative z-10 max-w-[1200px] mx-auto px-6 md:px-12 w-full">
-            <div className="text-center mb-24 lg:mb-32">
-              <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-6 py-2.5 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-400 mb-8 backdrop-blur-md">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                Legacy & Time
+        <section className="bg-neutral-950 text-white py-24 sm:py-32 relative z-30">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="flex flex-col items-center text-center space-y-6 mb-20">
+              <div className="inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#b58b54]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#b58b54] animate-pulse"></span>
+                Tailored Deliveries
               </div>
-              <h2 className="text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight font-light text-white">
-                Our Heritage <span className="font-serif italic text-emerald-400">Journey</span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight tracking-tight text-white">
+                Packaging <span className="font-semibold text-[#b58b54]">Options</span>
               </h2>
+              <p className="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto">
+                Whether you are stocking boutique shelves or supplying global distributors, we offer versatile, export-ready packaging formats tailored to your brand's requirements.
+              </p>
             </div>
 
-            <div className="relative">
-              {/* Vertical Line */}
-              <div className="absolute left-[28px] md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/20 to-transparent -translate-x-1/2"></div>
-
-              <div className="space-y-24 md:space-y-40">
-                {/* Timeline Item 1 */}
-                <div className="relative flex flex-col md:flex-row items-center justify-between w-full group">
-                  {/* Center Dot */}
-                  <div className="absolute left-[28px] md:left-1/2 w-6 h-6 rounded-full bg-neutral-950 border border-emerald-500/50 shadow-[0_0_15px_rgba(16,185,129,0.3)] group-hover:bg-emerald-500 transition-colors duration-500 -translate-x-1/2 z-10 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-emerald-400"></div>
-                  </div>
-
-                  <div className="w-full md:w-[45%] pl-20 md:pl-0 md:text-right md:pr-16 order-2 md:order-1 mt-6 md:mt-0">
-                    <h3 className="hidden md:block text-5xl lg:text-7xl font-light text-white mb-2 leading-none group-hover:text-emerald-400 transition-colors duration-500">1824<span className="font-serif italic text-white/20 ml-2">to</span><br />1852</h3>
-                  </div>
-
-                  <div className="w-full md:w-[45%] pl-16 md:pl-16 order-1 md:order-2">
-                    <h3 className="md:hidden text-4xl font-light text-white mb-6 group-hover:text-emerald-400 transition-colors duration-500">1824<span className="font-serif italic text-white/30 text-2xl mx-2">to</span>1852</h3>
-
-                    <div className="relative rounded-3xl p-8 overflow-hidden bg-white/[0.02] border border-white/5 backdrop-blur-md group-hover:bg-white/[0.04] group-hover:border-emerald-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-20px_rgba(16,185,129,0.15)]">
-                      <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 blur-[50px] rounded-full"></div>
-                      <h4 className="text-emerald-400 font-medium tracking-widest uppercase text-sm mb-4">Foundations</h4>
-                      <ul className="space-y-4 text-neutral-400 text-lg leading-relaxed font-light">
-                        <li className="flex gap-4">
-                          <span className="text-emerald-500 mt-1.5 flex-shrink-0">✦</span>
-                          <div><strong className="text-white font-medium">1824 – Peradeniya:</strong> First tea plants from China grown at the Royal Botanical Gardens.</div>
-                        </li>
-                        <li className="flex gap-4">
-                          <span className="text-emerald-500 mt-1.5 flex-shrink-0">✦</span>
-                          <div><strong className="text-white font-medium">1852 – James Taylor:</strong> Arrives at Loolecondera; later pioneers disciplined estate tea.</div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
+            <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+              {/* Box 1: Tea Bags */}
+              <div className="group relative rounded-[2.5rem] bg-neutral-900 border border-white/10 overflow-hidden hover:border-[#b58b54]/50 transition-colors duration-500">
+                <div className="relative h-64 md:h-72 w-full overflow-hidden">
+                  <Image src="/tea_bags_packaging.webp" alt="Premium Ceylon tea bags packaging — string and tag, pyramid silken bags" fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 33vw" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent"></div>
                 </div>
-
-                {/* Timeline Item 2 */}
-                <div className="relative flex flex-col md:flex-row items-center justify-between w-full group">
-                  {/* Center Dot */}
-                  <div className="absolute left-[28px] md:left-1/2 w-6 h-6 rounded-full bg-neutral-950 border border-[#b58b54]/50 shadow-[0_0_15px_rgba(181,139,84,0.3)] group-hover:bg-[#b58b54] transition-colors duration-500 -translate-x-1/2 z-10 flex items-center justify-center">
-                    <div className="w-2 h-2 rounded-full bg-[#f1d2a4]"></div>
+                <div className="p-8 md:p-10 relative z-10 -mt-20">
+                  <div className="w-14 h-14 rounded-full bg-[#b58b54] flex items-center justify-center text-white shadow-xl mb-6 relative group-hover:-translate-y-2 transition-transform duration-500 before:absolute before:inset-0 before:rounded-full before:bg-[#b58b54]/40 before:blur-md before:-z-10 group-hover:before:blur-xl">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" /></svg>
                   </div>
-
-                  <div className="w-full md:w-[45%] pl-16 md:pl-0 md:pr-16 lg:pr-24 order-1 md:order-1 z-10">
-                    <h3 className="md:hidden text-4xl font-light text-white mb-6 group-hover:text-[#f1d2a4] transition-colors duration-500">1867<span className="font-serif italic text-white/30 text-2xl mx-2">to</span>1873</h3>
-
-                    <div className="relative rounded-3xl p-8 overflow-hidden bg-white/[0.02] border border-white/5 backdrop-blur-md group-hover:bg-white/[0.04] group-hover:border-[#b58b54]/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-20px_rgba(181,139,84,0.15)]">
-                      <div className="absolute top-0 left-0 w-32 h-32 bg-[#b58b54]/10 blur-[50px] rounded-full"></div>
-                      <h4 className="text-[#f1d2a4] font-medium tracking-widest uppercase text-sm mb-4">Birth of the Industry</h4>
-                      <ul className="space-y-4 text-neutral-400 text-lg leading-relaxed font-light">
-                        <li className="flex gap-4">
-                          <span className="text-[#b58b54] mt-1.5 flex-shrink-0">✦</span>
-                          <div><strong className="text-white font-medium">1867 – Loolecondera:</strong> ~19‑acre commercial planting validates scalability.</div>
-                        </li>
-                        <li className="flex gap-4">
-                          <span className="text-[#b58b54] mt-1.5 flex-shrink-0">✦</span>
-                          <div><strong className="text-white font-medium">1869–1870s:</strong> Coffee Leaf Rust devastates coffee; estates pivot entirely to tea.</div>
-                        </li>
-                        <li className="flex gap-4">
-                          <span className="text-[#b58b54] mt-1.5 flex-shrink-0">✦</span>
-                          <div><strong className="text-white font-medium">1873 – First Export:</strong> 23 lbs of Ceylon tea shipped to London.</div>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="w-full md:w-[45%] pl-20 md:pl-16 order-2 md:order-2 mt-6 md:mt-0 text-left">
-                    <h3 className="hidden md:block text-5xl lg:text-7xl font-light text-white mb-2 leading-none group-hover:text-[#f1d2a4] transition-colors duration-500">1867<span className="font-serif italic text-white/20 ml-2">to</span><br />1873</h3>
-                  </div>
+                  <h3 className="text-2xl font-semibold mb-4 text-white group-hover:text-[#b58b54] transition-colors">Premium Tea Bags</h3>
+                  <p className="text-neutral-400 leading-relaxed">
+                    Individually sealed string & tag tea bags or silken pyramids designed for convenience without compromising our highland quality.
+                  </p>
                 </div>
               </div>
-            </div>
 
-            <div className="mt-32 flex justify-center relative z-10 w-full">
-              <button className="group relative inline-flex items-center justify-center gap-4 whitespace-nowrap text-sm font-semibold tracking-widest uppercase h-14 rounded-full px-10 text-neutral-900 bg-white hover:bg-neutral-100 transition-all duration-500 overflow-hidden">
-                <span className="relative z-10">Discover Full History</span>
-                <span className="relative z-10 bg-neutral-900/10 text-neutral-900 rounded-full p-2 group-hover:translate-x-1 transition-transform">
-                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
-                </span>
-              </button>
+              {/* Box 2: Bulk Tea */}
+              <div className="group relative rounded-[2.5rem] bg-neutral-900 border border-white/10 overflow-hidden hover:border-[#b58b54]/50 transition-colors duration-500">
+                <div className="relative h-64 md:h-72 w-full overflow-hidden">
+                  <Image src="/bulk_tea_packaging.webp" alt="Bulk loose leaf Ceylon tea packaging in moisture-barrier multi-wall sacks" fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 33vw" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent"></div>
+                </div>
+                <div className="p-8 md:p-10 relative z-10 -mt-20">
+                  <div className="w-14 h-14 rounded-full bg-[#b58b54] flex items-center justify-center text-white shadow-xl mb-6 relative group-hover:-translate-y-2 transition-transform duration-500 before:absolute before:inset-0 before:rounded-full before:bg-[#b58b54]/40 before:blur-md before:-z-10 group-hover:before:blur-xl">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" /></svg>
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-4 text-white group-hover:text-[#b58b54] transition-colors">Bulk Loose Leaf</h3>
+                  <p className="text-neutral-400 leading-relaxed">
+                    Wholesale quantities expertly packed in moisture-barrier multilayer multi-wall sacks to ensure factory-level freshness across oceans.
+                  </p>
+                </div>
+              </div>
+
+              {/* Box 3: Gift Items */}
+              <div className="group relative rounded-[2.5rem] bg-neutral-900 border border-white/10 overflow-hidden hover:border-[#b58b54]/50 transition-colors duration-500">
+                <div className="relative h-64 md:h-72 w-full overflow-hidden">
+                  <Image src="/gift_tea_packaging.webp" alt="Exquisite Ceylon tea gift set in luxury presentation box" fill className="object-cover group-hover:scale-105 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 33vw" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-neutral-900 to-transparent"></div>
+                </div>
+                <div className="p-8 md:p-10 relative z-10 -mt-20">
+                  <div className="w-14 h-14 rounded-full bg-[#b58b54] flex items-center justify-center text-white shadow-xl mb-6 relative group-hover:-translate-y-2 transition-transform duration-500 before:absolute before:inset-0 before:rounded-full before:bg-[#b58b54]/40 before:blur-md before:-z-10 group-hover:before:blur-xl">
+                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7" /></svg>
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-4 text-white group-hover:text-[#b58b54] transition-colors">Bespoke Gift Sets</h3>
+                  <p className="text-neutral-400 leading-relaxed">
+                    Elegant presentation boxes, ornate tins, and custom caddies for premium retail ranges or corporate gifting campaigns.
+                  </p>
+                </div>
+              </div>
+
             </div>
           </div>
         </section>
+
       </main>
     </>
   );

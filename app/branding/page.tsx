@@ -3,25 +3,34 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata = {
-    title: "Private Label Branding | Ceylon Tea Land",
-    description: "Launch your premium tea brand with our world-class estate network. Export-grade Ceylon tea, elegantly packaged.",
-    keywords: ["Private Label Tea", "Tea Branding", "White Label Tea", "Ceylon Tea Land"],
+    title: "Private Label Tea Branding — Your Brand, Our Legacy",
+    description: "Launch your premium tea brand with Ceylon Tea Land's world-class estate network. Custom packaging, export-grade Ceylon tea, and turnkey private label solutions for global brands.",
+    keywords: ["Private Label Tea", "White Label Tea", "Tea Branding Sri Lanka", "Custom Tea Packaging", "Tea Brand Development", "OEM Tea Manufacturing", "Private Label Ceylon Tea", "Tea Contract Manufacturing", "Wholesale Tea Branding"],
     authors: [{ name: "Ceylon Tea Land" }],
+    alternates: {
+        canonical: "/branding",
+    },
     openGraph: {
         title: "Private Label Branding | Ceylon Tea Land",
-        description: "Launch your premium tea brand with our world-class estate network.",
+        description: "Launch your premium tea brand with our world-class estate network. Custom packaging and turnkey solutions.",
         url: "https://ceylontealand.com/branding",
         siteName: "Ceylon Tea Land",
         images: [
             {
-                url: "/og-image.png",
+                url: "/heroimg.png",
                 width: 1200,
                 height: 630,
-                alt: "Private Label Branding | Ceylon Tea Land",
+                alt: "Private Label Tea Branding — Ceylon Tea Land",
             },
         ],
         locale: "en_US",
         type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Private Label Branding | Ceylon Tea Land",
+        description: "Launch your premium tea brand with our world-class estate network.",
+        images: ["/heroimg.png"],
     },
 };
 
@@ -55,10 +64,11 @@ export default function BrandingPage() {
             <section className="relative min-h-screen overflow-hidden flex items-end pt-32 rounded-b-[60px] shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
                 <Image
                     src="/branding-hero.webp"
-                    alt="Premium White Label Tea"
+                    alt="Premium white label Ceylon tea packaging and custom branding solutions"
                     fill
                     className="object-cover"
                     priority
+                    sizes="100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
@@ -148,6 +158,8 @@ export default function BrandingPage() {
                                 alt="Master tea blender"
                                 fill
                                 className="object-cover group-hover:scale-105 transition-transform duration-1000"
+                                loading="lazy"
+                                sizes="(max-width: 1024px) 100vw, 50vw"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                             <div className="absolute bottom-8 left-8 right-8 text-white">
@@ -190,6 +202,8 @@ export default function BrandingPage() {
                                             alt={step.title}
                                             fill
                                             className="object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
+                                            loading="lazy"
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 40vw"
                                         />
                                     </div>
                                 ) : step.icon ? (

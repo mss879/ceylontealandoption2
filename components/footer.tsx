@@ -1,5 +1,8 @@
+'use client'
+
 import Link from 'next/link';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
 const footerNavColumns = [
     {
@@ -34,6 +37,12 @@ const footerNavColumns = [
 ];
 
 export function Footer() {
+    const pathname = usePathname();
+
+    if (pathname && pathname.startsWith('/admin')) {
+        return null;
+    }
+
     return (
         <footer className="tea-footer">
             <div className="tea-footer__container">
@@ -57,6 +66,8 @@ export function Footer() {
                             width={600}
                             height={400}
                             className="tea-footer__image"
+                            loading="lazy"
+                            sizes="(max-width: 768px) 100vw, 50vw"
                         />
                     </div>
                 </div>
@@ -110,6 +121,8 @@ export function Footer() {
                                 width={350}
                                 height={180}
                                 className="tea-footer__meta-logo scale-150 ml-3 origin-left w-auto"
+                                loading="lazy"
+                                sizes="100px"
                             />
                         </a>
                     </div>

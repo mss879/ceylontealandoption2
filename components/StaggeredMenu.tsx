@@ -386,7 +386,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
 
     const portalContent = (
         <div
-            className="sm-portal-scope staggered-menu-wrapper pointer-events-none fixed top-0 left-0 w-screen h-screen z-[100]"
+            className="sm-portal-scope staggered-menu-wrapper pointer-events-none fixed top-0 left-0 w-screen h-[100dvh] z-[100]"
             style={accentColor ? ({ ['--sm-accent' as any]: accentColor } as React.CSSProperties) : undefined}
             data-position={position}
             data-open={open || undefined}
@@ -416,22 +416,24 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             <aside
                 id="staggered-menu-panel"
                 ref={panelRef}
-                className="staggered-menu-panel absolute top-0 right-0 h-full bg-white flex flex-col p-[6em_2em_2em_2em] overflow-y-auto z-[110] backdrop-blur-[12px] pointer-events-auto"
-                style={{ WebkitBackdropFilter: 'blur(12px)' }}
+                className="staggered-menu-panel absolute top-0 right-0 h-[100dvh] max-h-[100dvh] bg-white flex flex-col p-[6em_2em_2em_2em] overflow-y-auto overflow-x-hidden z-[110] backdrop-blur-[12px] pointer-events-auto shrink-0"
+                style={{ WebkitBackdropFilter: 'blur(12px)', WebkitOverflowScrolling: 'touch' }}
                 aria-hidden={!open}
             >
                 {/* We moved the logo here inside the panel so users can see it, or since it's full overlay */}
-                <div className="sm-panel-inner flex-1 flex flex-col gap-5">
+                <div className="sm-panel-inner flex-1 flex flex-col gap-0">
+                    {/* Centered menu items */}
+                    <div className="flex-1 flex items-center justify-center">
                     <ul
-                        className="sm-panel-list list-none m-0 p-0 flex flex-col gap-2"
+                        className="sm-panel-list list-none m-0 p-0 flex flex-col gap-2 w-full"
                         role="list"
                         data-numbering={displayItemNumbering || undefined}
                     >
                         {items && items.length ? (
                             items.map((it, idx) => (
-                                <li className="sm-panel-itemWrap relative overflow-hidden leading-none" key={it.label + idx}>
+                                <li className="sm-panel-itemWrap relative overflow-hidden leading-none border-b border-neutral-200 pb-3" key={it.label + idx}>
                                     <a
-                                        className="sm-panel-item relative text-black font-semibold text-[3rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]"
+                                        className="sm-panel-item relative text-black font-semibold text-[2.25rem] cursor-pointer leading-none tracking-[-1px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[0.5em]"
                                         href={it.link}
                                         aria-label={it.ariaLabel}
                                         data-index={idx + 1}
@@ -445,7 +447,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                             ))
                         ) : (
                             <li className="sm-panel-itemWrap relative overflow-hidden leading-none" aria-hidden="true">
-                                <span className="sm-panel-item relative text-black font-semibold text-[3rem] cursor-pointer leading-none tracking-[-2px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[1.4em]">
+                                <span className="sm-panel-item relative text-black font-semibold text-[2.25rem] cursor-pointer leading-none tracking-[-1px] uppercase transition-[background,color] duration-150 ease-linear inline-block no-underline pr-[0.5em]">
                                     <span className="sm-panel-itemLabel inline-block [transform-origin:50%_100%] will-change-transform">
                                         No items
                                     </span>
@@ -453,9 +455,11 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                             </li>
                         )}
                     </ul>
+                    </div>
 
+                    {/* Socials pinned at bottom */}
                     {displaySocials && socialItems && socialItems.length > 0 && (
-                        <div className="sm-socials mt-auto pt-8 flex flex-col gap-3" aria-label="Social links">
+                        <div className="sm-socials pt-6 flex flex-col gap-3" aria-label="Social links">
                             <h3 className="sm-socials-title m-0 text-base font-medium [color:var(--sm-accent,#ff0000)]">Socials</h3>
                             <ul
                                 className="sm-socials-list list-none m-0 p-0 flex flex-row items-center gap-4 flex-wrap"
@@ -467,7 +471,7 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
                                             href={s.link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className="sm-socials-link text-[1.2rem] font-medium text-[#111] no-underline relative inline-block py-[2px] transition-[color,opacity] duration-300 ease-linear"
+                                            className="sm-socials-link text-[1rem] font-medium text-[#111] no-underline relative inline-block py-[2px] transition-[color,opacity] duration-300 ease-linear"
                                         >
                                             {s.label}
                                         </a>
@@ -480,25 +484,27 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
             </aside>
 
             <style>{`
-        .sm-portal-scope .staggered-menu-panel { position: absolute; top: 0; right: 0; width: clamp(260px, 38vw, 420px); height: 100%; background: white; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; flex-direction: column; padding: 10em 2em 2em 2em; overflow-y: auto; z-index: 110; pointer-events: auto; }
+        .sm-portal-scope .staggered-menu-panel { position: absolute; top: 0; right: 0; width: clamp(260px, 38vw, 420px); height: 100dvh; max-height: 100dvh; background: white; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); display: flex; flex-direction: column; padding: 6em 2em 2em 2em; overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; z-index: 110; pointer-events: auto; }
         .sm-portal-scope[data-position='left'] .staggered-menu-panel { right: auto; left: 0; }
         .sm-portal-scope .sm-prelayers { position: absolute; top: 0; right: 0; bottom: 0; width: clamp(260px, 38vw, 420px); pointer-events: none; z-index: 105; }
         .sm-portal-scope[data-position='left'] .sm-prelayers { right: auto; left: 0; }
         .sm-portal-scope .sm-prelayer { position: absolute; top: 0; right: 0; height: 100%; width: 100%; transform: translateX(0); }
-        .sm-portal-scope .sm-panel-inner { flex: 1; display: flex; flex-direction: column; gap: 1.25rem; }
-        .sm-portal-scope .sm-socials { margin-top: auto; padding-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
-        .sm-portal-scope .sm-socials-title { margin: 0; font-size: 1rem; font-weight: 500; color: var(--sm-accent, #ff0000); }
+        .sm-portal-scope .sm-panel-inner { flex: 1 0 auto; display: flex; flex-direction: column; justify-content: center; gap: 1.25rem; min-height: min-content; }
+        .sm-portal-scope .sm-socials { margin-top: auto; padding-top: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+        .sm-portal-scope .sm-socials-title { margin: 0; font-size: 0.875rem; font-weight: 500; color: var(--sm-accent, #ff0000); }
         .sm-portal-scope .sm-socials-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: row; align-items: center; gap: 1rem; flex-wrap: wrap; }
-        .sm-portal-scope .sm-socials-link { font-size: 1.2rem; font-weight: 500; color: #111; text-decoration: none; position: relative; padding: 2px 0; display: inline-block; transition: color 0.3s ease, opacity 0.3s ease; }
+        .sm-portal-scope .sm-socials-link { font-size: 1rem; font-weight: 500; color: #111; text-decoration: none; position: relative; padding: 2px 0; display: inline-block; transition: color 0.3s ease, opacity 0.3s ease; }
         .sm-portal-scope .sm-socials-link:hover { color: var(--sm-accent, #ff0000); }
-        .sm-portal-scope .sm-panel-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1.5rem; }
-        .sm-portal-scope .sm-panel-item { position: relative; color: #000; font-weight: 600; font-size: 3rem; cursor: pointer; line-height: 1; letter-spacing: -2px; text-transform: uppercase; transition: background 0.25s, color 0.25s; display: inline-block; text-decoration: none; padding-right: 1.4em; white-space: nowrap; }
+        .sm-portal-scope .sm-panel-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0; }
+        .sm-portal-scope .sm-panel-itemWrap { border-bottom: 1px solid #e5e5e5; padding-bottom: 0.75rem; padding-top: 0.75rem; }
+        .sm-portal-scope .sm-panel-itemWrap:last-child { border-bottom: none; }
+        .sm-portal-scope .sm-panel-item { position: relative; color: #000; font-weight: 600; font-size: clamp(1.75rem, 4vw, 2.5rem); cursor: pointer; line-height: 1.15; letter-spacing: -1px; text-transform: uppercase; transition: background 0.25s, color 0.25s; display: inline-block; text-decoration: none; padding-right: 0.5em; white-space: nowrap; }
         .sm-portal-scope .sm-panel-itemLabel { display: inline-block; will-change: transform; transform-origin: 50% 100%; white-space: nowrap; }
         .sm-portal-scope .sm-panel-item:hover { color: var(--sm-accent, #ff0000); }
         .sm-portal-scope .sm-panel-list[data-numbering] { counter-reset: smItem; }
-        .sm-portal-scope .sm-panel-list[data-numbering] .sm-panel-item::after { counter-increment: smItem; content: counter(smItem, decimal-leading-zero); position: absolute; top: 0.1em; right: 3.2em; font-size: 18px; font-weight: 400; color: var(--sm-accent, #ff0000); letter-spacing: 0; pointer-events: none; user-select: none; opacity: var(--sm-num-opacity, 0); }
-        @media (max-width: 1024px) { .sm-portal-scope .staggered-menu-panel { width: 100%; left: 0; right: 0; } }
-        @media (max-width: 640px) { .sm-portal-scope .staggered-menu-panel { width: 100%; left: 0; right: 0; } }
+        .sm-portal-scope .sm-panel-list[data-numbering] .sm-panel-item::after { counter-increment: smItem; content: counter(smItem, decimal-leading-zero); position: absolute; top: 0.1em; right: 0; font-size: 14px; font-weight: 400; color: var(--sm-accent, #ff0000); letter-spacing: 0; pointer-events: none; user-select: none; opacity: var(--sm-num-opacity, 0); }
+        @media (max-width: 1024px) { .sm-portal-scope .staggered-menu-panel { width: 100%; left: 0; right: 0; padding: 5em 1.5em 2em 1.5em; } .sm-portal-scope .sm-prelayers { width: 100%; } .sm-portal-scope .sm-panel-list { align-items: center; text-align: center; } .sm-portal-scope .sm-panel-itemWrap { text-align: center; } .sm-portal-scope .sm-panel-item { padding-right: 0; } .sm-portal-scope .sm-socials { align-items: center; text-align: center; } .sm-portal-scope .sm-socials-list { justify-content: center; } }
+        @media (max-width: 640px) { .sm-portal-scope .staggered-menu-panel { width: 100%; left: 0; right: 0; padding: 5em 1.25em 1.5em 1.25em; } .sm-portal-scope .sm-panel-item { font-size: 1.75rem; letter-spacing: -0.5px; } }
       `}</style>
         </div>
     );

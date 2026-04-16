@@ -3,25 +3,34 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata = {
-    title: "The Legacy of Ceylon Tea | Ceylon Tea Land",
-    description: "Discover the history, the terroirs, and the dedication that created the world's most celebrated pure single-origin tea.",
-    keywords: ["Ceylon Tea History", "Tea Elevations", "Sri Lanka Tea", "Ceylon Tea Land"],
+    title: "The Legacy of Ceylon Tea — History & Terroir",
+    description: "Discover the rich history, three distinct elevation terroirs, and 150+ years of dedication that created the world's most celebrated pure single-origin tea from Sri Lanka.",
+    keywords: ["Ceylon Tea History", "Tea Elevations Sri Lanka", "High Grown Ceylon Tea", "Mid Grown Tea", "Low Grown Tea", "Nuwara Eliya Tea", "Uva Tea Region", "Single Origin Ceylon Tea", "James Taylor Tea Pioneer", "Colombo Tea Auction"],
     authors: [{ name: "Ceylon Tea Land" }],
+    alternates: {
+        canonical: "/ceylon-tea",
+    },
     openGraph: {
         title: "The Legacy of Ceylon Tea | Ceylon Tea Land",
-        description: "Discover the history, the terroirs, and the dedication that created the world's most celebrated pure single-origin tea.",
+        description: "Discover 150+ years of tea heritage — from James Taylor's first estate to the world's most celebrated single-origin tea.",
         url: "https://ceylontealand.com/ceylon-tea",
         siteName: "Ceylon Tea Land",
         images: [
             {
-                url: "/og-image.png",
+                url: "/heroimg.png",
                 width: 1200,
                 height: 630,
-                alt: "The Legacy of Ceylon Tea | Ceylon Tea Land",
+                alt: "The Legacy of Ceylon Tea — History and Terroirs of Sri Lanka",
             },
         ],
         locale: "en_US",
         type: "website",
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "The Legacy of Ceylon Tea | Ceylon Tea Land",
+        description: "Discover 150+ years of tea heritage — from James Taylor's first estate to the world's most celebrated single-origin tea.",
+        images: ["/heroimg.png"],
     },
 };
 
@@ -76,10 +85,11 @@ export default function CeylonTeaPage() {
             <section className="relative min-h-screen overflow-hidden flex items-end rounded-b-[60px] shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
                 <Image
                     src="/about_hero_tea_estate.png"
-                    alt="Lush green tea estates of Sri Lanka"
+                    alt="Lush green tea estates stretching across the hills of Sri Lanka"
                     fill
                     className="object-cover"
                     priority
+                    sizes="100vw"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
@@ -173,6 +183,8 @@ export default function CeylonTeaPage() {
                                         alt={elevation.title}
                                         fill
                                         className="object-cover group-hover:scale-105 transition-transform duration-700"
+                                        loading="lazy"
+                                        sizes="(max-width: 1024px) 100vw, 33vw"
                                     />
                                 </div>
                                 <div className="p-10 flex-1 flex flex-col">

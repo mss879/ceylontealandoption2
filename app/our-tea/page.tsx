@@ -1,110 +1,86 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Card, CardContent } from "@/components/ui/card"
-import { ArrowUpRight, Leaf } from 'lucide-react'
+import { Leaf } from 'lucide-react'
 
 export const metadata = {
-  title: "Our Tea Grades | Ceylon Tea Land",
-  description: "Explore our extensive collection of premium Ceylon tea grades, from robust black teas to delicate green teas and aromatic blends.",
-  keywords: ["Ceylon Tea Grades", "Black Tea", "Green Tea", "Flavored Tea", "Tea Exporter"],
+  title: "Our Tea — Black, Green & Flavoured Ceylon Tea | Premium Tea Exporters",
+  description: "Explore our extensive collection of premium Ceylon tea grades — from robust BOP and BOPF black teas to delicate green teas and aromatic flavoured blends, available for bulk wholesale and retail.",
+  keywords: ["Ceylon Tea Grades", "Black Tea", "Green Tea", "Flavored Tea", "Tea Exporter", "Buy Ceylon Black Tea Online", "Premium Tea Exporters Sri Lanka", "Authentic Sri Lankan Tea", "Bulk Ceylon Tea", "BOP Tea Grade", "BOPF Tea", "Ceylon Tea Wholesale Catalog", "Loose Leaf Ceylon Tea"],
   authors: [{ name: "Ceylon Tea Land" }],
+  alternates: {
+    canonical: "/our-tea",
+  },
   openGraph: {
     title: "Our Tea Grades | Ceylon Tea Land",
-    description: "Explore our extensive collection of premium Ceylon tea grades.",
+    description: "Explore our extensive collection of premium Ceylon tea grades — black, green, and flavoured teas for wholesale and retail.",
     url: "https://ceylontealand.com/our-tea",
     siteName: "Ceylon Tea Land",
     images: [
       {
-        url: "/og-image.png",
+        url: "/heroimg.png",
         width: 1200,
         height: 630,
-        alt: "Our Tea Grades | Ceylon Tea Land",
+        alt: "Our Ceylon Tea Grades — Premium Black, Green & Flavoured Teas",
       },
     ],
     locale: "en_US",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Tea Grades | Ceylon Tea Land",
+    description: "Premium Ceylon tea grades — black, green, and flavoured teas for wholesale and retail.",
+    images: ["/heroimg.png"],
+  },
 };
 
-// Data Structure
-const teaCategories = {
-  black: [
-    { id: 'pekoe', name: 'Pekoe', image: '/products/pekoe.png' },
-    { id: 'pekoe1', name: 'Pekoe 1', image: '/products/pekoe-1.png' },
-    { id: 'opa', name: 'OPA', image: '/products/OPA.png' },
-    { id: 'op1', name: 'OP 1', image: '/products/OP1.png' },
-    { id: 'dust', name: 'Dust', image: '/products/DUST.png' },
-    { id: 'bopf', name: 'BOPF', image: '/products/BOPF.png' },
-    { id: 'bop', name: 'BOP', image: '/products/BOP.png' },
-    { id: 'bop1', name: 'BOP 1', image: '/products/BOP1.png' },
-    { id: 'bop1a', name: 'BOP 1A', image: '/products/BOP1A.png' },
-    { id: 'broken-mix', name: 'Broken Mix', image: '/products/BM-tea.png' },
-    { id: 'fgs1', name: 'FGS 1', image: '/products/FGS1.png' },
-    { id: 'fbop', name: 'FBOP', image: '/products/FBOP.png' },
-    { id: 'fbopf1', name: 'FBOP F1', image: '/products/FBOPF1.png' },
-    { id: 'fbopfsp', name: 'FBOP F SP', image: '/products/FBOPFSP.png' },
-    { id: 'fbopfexsp1', name: 'FBOP FEX SP1', image: '/products/FBOP FEX SP1.png' },
-  ],
-  flavoured: [
-    { id: 'gt-earl-grey', name: 'GT Earl Grey', image: '/products/earl grey 3.jpg' },
-    { id: '1001-nights', name: '1001 Nights', image: '/products/1001 nghts 7.jpg' },
-    { id: 'wild-berry', name: 'Wild Berry', image: '/products/very berry 8.jpg' },
-    { id: 'strawberry', name: 'Strawberry', image: '/products/strawberry 10.jpg' },
-    { id: 'ginger-lemon', name: 'Ginger Lemon', image: '/products/ginger lemon 12.jpg' },
-    { id: 'lady-grey', name: 'Lady Grey', image: '/products/lady grey 14.jpg' },
-    { id: 'apple', name: 'Apple', image: '/products/apple 15.jpg' },
-    { id: 'rose', name: 'Rose', image: '/products/rose 16.jpg' },
-    { id: 'masala-mix', name: 'Masala Mix', image: '/products/masala 17.jpg' },
-    { id: 'bt-earl-grey', name: 'BT Earl Grey', image: '/products/earl grey bt 18.jpg' },
-  ],
-  green: [
-    { id: 'gun-powder-special', name: 'Gun Powder Special', image: '/products/GP-SPECIAL.png' },
-    { id: 'gt-curl', name: 'GT Curl', image: '/products/GREEN-TEA-CURL.png' },
-    { id: 'gt-chunmee', name: 'GT Chunmee', image: '/products/Gt-Chumnee.png' },
-    { id: 'gtff1', name: 'GTFF1', image: '/products/GTFF1.png' },
-    { id: 'gun-powder', name: 'Gun Powder', image: '/products/GUN-POWDER-1.png' },
-    { id: 'young-hyson', name: 'Young Hyson', image: '/products/young-hyson.png' },
-  ]
-}
+import { createClient } from '@/utils/supabase/server'
 
-const footerNavColumns = [
-  {
-    title: 'Navigation',
-    links: [
-      { label: 'Home', href: '/' },
-      { label: 'Ceylon Tea', href: '/ceylon-tea' },
-      { label: 'About Us', href: '/about' },
-      { label: 'Events', href: '/events' },
-      { label: 'Our Tea', href: '/our-tea' },
-      { label: 'Branding', href: '/branding' },
-    ],
-  },
-  {
-    title: 'Products',
-    links: [
-      { label: 'Tea Bags', href: '/#tea-bags' },
-      { label: 'Bulk Tea', href: '/#bulk-tea' },
-      { label: 'Green Tea', href: '/#green-tea' },
-    ],
-  },
-  {
-    title: 'Account & Support',
-    links: [
-      { label: 'Contact Us', href: '/contact' },
-    ],
-  },
-  {
-    title: 'Contact Details',
-    links: [],
-  },
-];
+export default async function OurTeaPage() {
+  const supabase = createClient()
+  
+  // Fetch products from database
+  const { data: products } = await supabase
+    .from('products')
+    .select('*')
+    .order('created_at', { ascending: true }) // preserve roughly original order
 
-export default function OurTeaPage() {
+  // Re-build the structure for the Tabs navigation
+  const teaCategories = {
+    black: products?.filter(p => p.category === 'black') || [],
+    flavoured: products?.filter(p => p.category === 'flavoured') || [],
+    green: products?.filter(p => p.category === 'green') || []
+  }
+
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: products?.map((product, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: `https://ceylontealand.com/our-tea#${product.category}`,
+      item: {
+        '@type': 'Product',
+        name: product.name,
+        image: `https://ceylontealand.com${product.image}`,
+        description: `Premium ${product.category} Ceylon tea - ${product.name}`,
+        brand: {
+          '@type': 'Brand',
+          name: 'Ceylon Tea Land'
+        }
+      }
+    })) || []
+  };
+
   return (
-    <main className="flex-1 bg-white min-h-screen">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-neutral-950 pt-48 pb-32 text-white border-b border-[#ead9bc]">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <main className="flex-1 bg-white min-h-screen">
+        {/* Hero Section */}
+        <section className="relative overflow-hidden bg-neutral-950 pt-48 pb-32 text-white border-b border-[#ead9bc]">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute top-0 right-0 h-[600px] w-[600px] rounded-full bg-[#b58b54]/10 blur-[150px]" />
           <div className="absolute bottom-0 left-0 h-[500px] w-[500px] rounded-full bg-emerald-900/10 blur-[150px]" />
@@ -168,7 +144,7 @@ export default function OurTeaPage() {
 
             {['all', 'black', 'flavoured', 'green'].map((categoryKey) => {
               const teasToDisplay = categoryKey === 'all'
-                ? Object.values(teaCategories).flat()
+                ? products || []
                 : teaCategories[categoryKey as keyof typeof teaCategories] || [];
 
               return (
@@ -193,6 +169,8 @@ export default function OurTeaPage() {
                             alt={tea.name}
                             fill
                             className="object-contain p-2 group-hover:scale-[1.15] transition-transform duration-700 ease-out relative z-10"
+                            loading="lazy"
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 25vw"
                           />
                         </div>
 
@@ -217,129 +195,7 @@ export default function OurTeaPage() {
           </Tabs>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="tea-footer">
-        <div className="tea-footer__container">
-          <div className="tea-footer__banner">
-            <div className="tea-footer__banner-left">
-              <div className="tea-footer__cta">
-                <p className="tea-footer__cta-heading">
-                  Premium Sri Lankan teas, crafted for retailers, specialty cafes, and hospitality brands who expect
-                  unforgettable flavour in every cup.
-                </p>
-                <Link href="/contact" className="tea-footer__cta-button">
-                  Contact Us
-                </Link>
-              </div>
-            </div>
-
-            <div className="tea-footer__banner-right">
-              <Image
-                src="/tea_footer_banner.png"
-                alt="Pouring Ceylon Tea"
-                width={600}
-                height={400}
-                className="tea-footer__image"
-              />
-            </div>
-          </div>
-
-          <nav className="tea-footer__nav" aria-label="Footer">
-            {footerNavColumns.map((column) => (
-              <div key={column.title} className="tea-footer__nav-column">
-                <p className="tea-footer__badge">{column.title}</p>
-                <div className="tea-footer__nav-list">
-                  {column.links.map((link) => (
-                    <Link key={link.label} href={link.href} className="tea-footer__nav-link">
-                      {link.label}
-                    </Link>
-                  ))}
-                </div>
-                {column.title === 'Contact Details' && (
-                  <div className="tea-footer__contact-info mt-6 text-neutral-400 space-y-3 text-sm leading-relaxed">
-                    <p>
-                      <strong>Head Office -</strong> No. 51, Fairfield Gardens,<br />
-                      Colombo - 8, Sri Lanka.
-                    </p>
-                    <p>
-                      <strong>Hot line -</strong> +94 77 773 4180<br />
-                      <strong>Tel -</strong> +94 11 253 1682
-                    </p>
-                    <p>
-                      <strong>E-mail -</strong> info@ceylontealand.com<br />
-                      <strong>Fax -</strong> +94 11 254 7909
-                    </p>
-                  </div>
-                )}
-              </div>
-            ))}
-          </nav>
-
-          <div className="tea-footer__info">
-            <div className="tea-footer__meta flex-wrap gap-y-2">
-              <span>© 2025 Ceylon Tea Land.</span>
-              <span className="hidden sm:inline">|</span>
-              <a
-                href="https://www.arcai.agency"
-                target="_blank"
-                rel="noopener noreferrer"
-                title="ARC AI - Web Design & Digital Solutions"
-                className="inline-flex items-center hover:opacity-80 transition-opacity"
-              >
-                Designed & Developed by{' '}
-                <Image
-                  src="/arc logo.png"
-                  alt="ARC AI - Web Design & Digital Solutions"
-                  width={350}
-                  height={180}
-                  className="tea-footer__meta-logo scale-150 ml-3 origin-left w-auto"
-                />
-              </a>
-            </div>
-            <div className="tea-footer__socials">
-              <a
-                href="https://www.facebook.com/drrumie"
-                target="_blank"
-                rel="noreferrer"
-                className="tea-footer__social-link"
-                aria-label="Facebook"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  className="tea-footer__social-icon"
-                >
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                </svg>
-              </a>
-              <a
-                href="https://www.instagram.com/ceylontealand?utm_medium=copy_link"
-                target="_blank"
-                rel="noreferrer"
-                className="tea-footer__social-link"
-                aria-label="Instagram"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  className="tea-footer__social-icon"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-                  <circle cx="12" cy="12" r="3.5"></circle>
-                  <circle cx="17.5" cy="6.5" r="1"></circle>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
     </main>
+    </>
   )
 }

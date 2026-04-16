@@ -1,68 +1,75 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Calendar, MapPin, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { createClient } from '@/utils/supabase/server';
+
+export const dynamic = 'force-dynamic'
 
 export const metadata = {
-    title: "Events | Ceylon Tea Land",
-    description: "Explore our special events and upcoming exhibitions worldwide.",
+    title: "Events & Exhibitions — Global Trade Shows",
+    description: "Explore Ceylon Tea Land's international presence at the world's most prestigious food and beverage exhibitions — GULFOOD, PRODEXPO, IFE London, and more.",
+    keywords: ["Ceylon Tea Events", "Tea Trade Shows", "GULFOOD Dubai", "PRODEXPO Moscow", "IFE London", "Food Exhibition Sri Lanka", "Tea Expo", "Ceylon Tea Land Exhibitions", "World Food Russia"],
+    alternates: {
+        canonical: "/events",
+    },
     openGraph: {
-        title: "Events | Ceylon Tea Land",
-        description: "Explore our special events and upcoming exhibitions worldwide.",
+        title: "Events & Exhibitions | Ceylon Tea Land",
+        description: "Discover our international presence at the world's most prestigious food and beverage exhibitions.",
         url: "https://ceylontealand.com/events",
         siteName: "Ceylon Tea Land",
         images: [
             {
-                url: "/tea land favicon.png",
-                width: 500,
-                height: 500,
-                alt: "Ceylon Tea Land Events",
+                url: "/heroimg.png",
+                width: 1200,
+                height: 630,
+                alt: "Ceylon Tea Land at Global Trade Shows & Exhibitions",
             },
         ],
         locale: "en_US",
         type: "website",
     },
+    twitter: {
+        card: "summary_large_image",
+        title: "Events & Exhibitions | Ceylon Tea Land",
+        description: "Discover our international presence at the world's most prestigious food and beverage exhibitions.",
+        images: ["/heroimg.png"],
+    },
 };
 
-const events = [
-    {
-        title: "WORLD FOOD RUSSIA 2020",
-        image: "/WORLD FOOD RUSSIA 2020.png"
-    },
-    {
-        title: "WORLD FOOD RUSSIA 2021",
-        image: "/WORLD FOOD RUSSIA 2021.png"
-    },
-    {
-        title: "PRODEXPO MOSCOW RUSSIA 2022",
-        image: "/PRODEXPO MOSCOW RUSSIA 2022.png"
-    },
-    {
-        title: "GULFOOD DUBAI U.A.E 2022",
-        image: "/GULFOOD DUBAI U.A.E 2022.png"
-    },
-    {
-        title: "IFE EXCEL, LONDON MARCH 2022",
-        image: "/IFE EXCEL, LONDON MARCH 2022.jpg"
-    },
-    {
-        title: "HORECA LEBANON MARCH 2022",
-        image: "/HORECA LEBANON MARCH 2022.jpg"
-    },
-    {
-        title: "POLAND WARZSAW APRIL 2022",
-        image: "/POLAND WARZSAW APRIL 2022.jpg"
-    },
-    {
-        title: "CANADA MONTREAL APRIL 2022",
-        image: "/CANADA MONTREAL APRIL 2022.jpg"
-    },
-    {
-        title: "INTER FOOD AZERBAIJAN 2022",
-        image: "/INTER FOOD AZERBAIJAN 2022.jpg"
-    }
-];
+export default async function EventsPage() {
+    const supabase = createClient();
+    
+    // Fetch events grouped by year
+    const { data: events } = await supabase
+      .from('events')
+      .select('*')
+      .order('year', { ascending: false })
+      .order('created_at', { ascending: false });
 
-export default function EventsPage() {
+    // Fallback static events if DB is empty or not seeded
+    const fallbackEvents = [
+        { id: '1', title: "WORLD FOOD RUSSIA 2020", image: "/WORLD FOOD RUSSIA 2020.png", year: 2020 },
+        { id: '2', title: "WORLD FOOD RUSSIA 2021", image: "/WORLD FOOD RUSSIA 2021.png", year: 2021 },
+        { id: '3', title: "PRODEXPO MOSCOW RUSSIA 2022", image: "/PRODEXPO MOSCOW RUSSIA 2022.png", year: 2022 },
+        { id: '4', title: "GULFOOD DUBAI U.A.E 2022", image: "/GULFOOD DUBAI U.A.E 2022.png", year: 2022 },
+        { id: '5', title: "IFE EXCEL, LONDON MARCH 2022", image: "/IFE EXCEL, LONDON MARCH 2022.jpg", year: 2022 },
+        { id: '6', title: "HORECA LEBANON MARCH 2022", image: "/HORECA LEBANON MARCH 2022.jpg", year: 2022 },
+        { id: '7', title: "POLAND WARZSAW APRIL 2022", image: "/POLAND WARZSAW APRIL 2022.jpg", year: 2022 },
+        { id: '8', title: "CANADA MONTREAL APRIL 2022", image: "/CANADA MONTREAL APRIL 2022.jpg", year: 2022 },
+        { id: '9', title: "INTER FOOD AZERBAIJAN 2022", image: "/INTER FOOD AZERBAIJAN 2022.jpg", year: 2022 }
+    ];
+
+    const sourceEvents = (events && events.length > 0) ? events : fallbackEvents;
+
+    // Group events by year
+    const groupedEvents = sourceEvents.reduce((acc: any, event) => {
+        if (!acc[event.year]) acc[event.year] = [];
+        acc[event.year].push(event);
+        return acc;
+    }, {});
+
+    const years = Object.keys(groupedEvents).sort((a, b) => Number(b) - Number(a));
+
     return (
         <main className="bg-neutral-50 text-neutral-900 min-h-screen">
             {/* Hero Section */}
@@ -112,32 +119,45 @@ export default function EventsPage() {
                         </p>
                     </div>
 
-                    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-                        {events.map((event, index) => (
-                            <div
-                                key={event.title}
-                                className="group flex flex-col items-center"
-                            >
-                                <div className="relative w-full aspect-[4/5] md:aspect-[3/4] mb-8 rounded-[2rem] bg-white overflow-hidden transition-all duration-500 group-hover:-translate-y-4 group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)] shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-neutral-100">
-                                    <Image
-                                        src={event.image}
-                                        alt={event.title}
-                                        fill
-                                        className="object-cover object-center transition-all duration-700 ease-out group-hover:scale-105"
-                                    />
-                                    {/* Overlay Gradient */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-
-                                    {/* Reveal Button on Hover */}
-                                    <div className="absolute bottom-6 right-6 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white flex items-center justify-center translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
-                                        <ArrowUpRight className="w-5 h-5" />
-                                    </div>
+                    <div className="space-y-24">
+                        {years.map(year => (
+                            <div key={year} className="space-y-12">
+                                <div className="flex items-center justify-center gap-4">
+                                    <div className="h-[1px] w-24 bg-neutral-200"></div>
+                                    <h3 className="text-3xl font-serif text-emerald-800">{year}</h3>
+                                    <div className="h-[1px] w-24 bg-neutral-200"></div>
                                 </div>
-                                <div className="w-full text-center transform group-hover:-translate-y-2 transition-transform duration-500 px-4">
-                                    <h3 className="text-lg md:text-xl font-bold text-neutral-900 mb-2 group-hover:text-emerald-700 transition-colors duration-300">
-                                        {event.title}
-                                    </h3>
-                                    <div className="w-8 h-[2px] bg-emerald-700/30 mx-auto group-hover:bg-emerald-700 group-hover:w-16 transition-all duration-500"></div>
+                                <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+                                    {groupedEvents[year].map((event: any) => (
+                                        <div
+                                            key={event.id}
+                                            className="group flex flex-col items-center"
+                                        >
+                                            <div className="relative w-full aspect-[4/5] md:aspect-[3/4] mb-8 rounded-[2rem] bg-white overflow-hidden transition-all duration-500 group-hover:-translate-y-4 group-hover:shadow-[0_20px_60px_rgba(0,0,0,0.15)] shadow-[0_10px_30px_rgba(0,0,0,0.05)] border border-neutral-100">
+                                                <Image
+                                                    src={event.image}
+                                                    alt={event.title}
+                                                    fill
+                                                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                                    loading="lazy"
+                                                    className="object-cover object-center transition-all duration-700 ease-out group-hover:scale-105"
+                                                />
+                                                {/* Overlay Gradient */}
+                                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+
+                                                {/* Reveal Button on Hover */}
+                                                <div className="absolute bottom-6 right-6 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-white flex items-center justify-center translate-y-8 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 delay-100">
+                                                    <ArrowUpRight className="w-5 h-5" />
+                                                </div>
+                                            </div>
+                                            <div className="w-full text-center transform group-hover:-translate-y-2 transition-transform duration-500 px-4">
+                                                <h3 className="text-lg md:text-xl font-bold text-neutral-900 mb-2 group-hover:text-emerald-700 transition-colors duration-300">
+                                                    {event.title}
+                                                </h3>
+                                                <div className="w-8 h-[2px] bg-emerald-700/30 mx-auto group-hover:bg-emerald-700 group-hover:w-16 transition-all duration-500"></div>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
                             </div>
                         ))}

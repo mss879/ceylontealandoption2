@@ -12,6 +12,7 @@ const staggeredMenuItems = [
   { label: 'EVENTS', ariaLabel: 'View events', link: '/events' },
   { label: 'OUR TEA', ariaLabel: 'View our tea', link: '/our-tea' },
   { label: 'BRANDING', ariaLabel: 'View branding', link: '/branding' },
+  { label: 'NEWSROOM', ariaLabel: 'Read our articles', link: '/newsroom' },
   { label: 'CONTACT US', ariaLabel: 'Get in touch', link: '/contact' }
 ];
 
@@ -25,7 +26,7 @@ export function Navbar() {
   const pathname = usePathname()
 
   // Force floating style on contact and our-tea page
-  const isFloating = isScrolled || pathname === '/contact' || pathname === '/our-tea'
+  const isFloating = isScrolled || pathname === '/contact' || pathname === '/our-tea' || (pathname !== null && pathname.startsWith('/newsroom'))
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,6 +35,10 @@ export function Navbar() {
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  if (pathname && pathname.startsWith('/admin')) {
+    return null;
+  }
 
   return (
     <nav
@@ -52,6 +57,7 @@ export function Navbar() {
             height={60}
             className="h-10 md:h-12 w-auto object-contain"
             priority
+            unoptimized
           />
         </Link>
 

@@ -5,7 +5,6 @@ import { Navbar } from '@/components/navbar';
 import { Footer } from '@/components/footer';
 import { VisitorTracker } from '@/components/VisitorTracker';
 import { ChatWidget } from '@/components/ChatWidget';
-import { Preloader } from '@/components/Preloader';
 
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
@@ -175,7 +174,6 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <Preloader />
         <Navbar />
         <VisitorTracker />
         <div id="main-content">

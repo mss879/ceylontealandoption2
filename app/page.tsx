@@ -2,7 +2,7 @@ import { ArrowRight, Award, Globe, Heart, Leaf } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { CuratedProducts } from '@/components/curated-products';
-
+import { Preloader } from '@/components/Preloader';
 export const metadata = {
   title: "Premium Ceylon Tea Exporter from Sri Lanka",
   description: "Global Exporters of Authentic Ceylon Tea. Pure Ceylon tea from Sri Lanka's finest highland estates. Bulk wholesale supply, private labeling, and premium tea bags for worldwide distribution.",
@@ -170,6 +170,7 @@ const partnerBrands = [
 export default function Home() {
   return (
     <>
+      <Preloader />
       <main className="bg-white text-neutral-900">
         <section className="relative min-h-screen overflow-hidden flex items-end rounded-b-[60px] shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
           <Image

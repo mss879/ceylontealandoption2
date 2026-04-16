@@ -173,7 +173,7 @@ export default function Home() {
       <main className="bg-white text-neutral-900">
         <section className="relative min-h-screen overflow-hidden flex items-end rounded-b-[60px] shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
           <Image
-            src="/heroimg.webp"
+            src="/heroimg.png"
             alt="Scenic tea fields in the highlands of Sri Lanka"
             fill
             className="object-cover"

@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: '%s | Ceylon Tea Land',
   },
   description: 'Global Exporters of Authentic Ceylon Tea. Partner with our estate network for fresh, hand-picked Ceylon tea delivered worldwide with reliable logistics and export-grade consistency.',
-  keywords: ['Ceylon Tea', 'Sri Lanka Tea', 'Black Tea', 'Green Tea', 'Bulk Tea Exporter', 'Tea Bags', 'Premium Tea', 'Buy Ceylon Black Tea Online', 'Authentic Sri Lankan Tea', 'Ceylon Green Tea Benefits', 'Premium Tea Exporters Sri Lanka', 'Best Ceylon Tea Brand', 'Wholesale Ceylon Tea Supplier', 'Sri Lanka Tea Factory Direct'],
+  keywords: ['Ceylon Tea', 'Sri Lanka Tea', 'Ceylon Tea Land', 'Tea Exporter Sri Lanka', 'Premium Ceylon Tea'],
   authors: [{ name: 'Ceylon Tea Land', url: 'https://ceylontealand.com' }],
   creator: 'Ceylon Tea Land',
   publisher: 'Ceylon Tea Land (Pvt) Ltd.',
@@ -68,10 +68,9 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.ico', sizes: '48x48', type: 'image/x-icon' },
-      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
       { url: '/favicon-48x48.png', sizes: '48x48', type: 'image/png' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
       { url: '/android-chrome-192x192.png', sizes: '192x192', type: 'image/png' },
       { url: '/android-chrome-512x512.png', sizes: '512x512', type: 'image/png' },
     ],

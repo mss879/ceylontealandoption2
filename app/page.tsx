@@ -5,15 +5,15 @@ import { CuratedProducts } from '@/components/curated-products';
 import { Preloader } from '@/components/Preloader';
 export const metadata = {
   title: "Premium Ceylon Tea Exporter from Sri Lanka",
-  description: "Global Exporters of Authentic Ceylon Tea. Pure Ceylon tea from Sri Lanka's finest highland estates. Bulk wholesale supply, private labeling, and premium tea bags for worldwide distribution.",
-  keywords: ["Ceylon Tea", "Sri Lanka Tea", "Tea Exporter", "Pure Ceylon", "Black Tea", "Green Tea", "Buy Ceylon Black Tea Online", "Authentic Sri Lankan Tea", "Premium Ceylon Tea Brand", "Wholesale Ceylon Tea Supplier", "Ceylon Tea Bulk Export", "Sri Lanka Tea Factory Direct", "Tea Bags Manufacturer Sri Lanka", "Organic Ceylon Tea"],
+  description: "Global exporters of authentic Ceylon tea. Partner with our Sri Lankan estate network for fresh, hand-picked tea delivered worldwide.",
+  keywords: ["Ceylon Tea Exporter", "Premium Ceylon Tea", "Sri Lanka Tea Export", "Bulk Tea Supplier", "Tea Bags Manufacturer Sri Lanka", "Ceylon Tea Wholesale"],
   authors: [{ name: "Ceylon Tea Land" }],
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Ceylon Tea Land | Premium Ceylon Tea Exporters",
-    description: "Global Exporters of Authentic Ceylon Tea. Premium highland tea delivered worldwide with export-grade consistency.",
+    title: "Ceylon Tea Land — Premium Ceylon Tea Exporters from Sri Lanka",
+    description: "Global exporters of authentic Ceylon tea. Partner with our estate network for fresh, hand-picked tea delivered worldwide.",
     url: "https://ceylontealand.com",
     siteName: "Ceylon Tea Land",
     images: [
@@ -29,8 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ceylon Tea Land | Premium Ceylon Tea Exporters",
-    description: "Global Exporters of Authentic Ceylon Tea from Sri Lanka's finest highland gardens.",
+    title: "Ceylon Tea Land — Premium Ceylon Tea Exporters from Sri Lanka",
+    description: "Global exporters of authentic Ceylon tea. Fresh, hand-picked tea delivered worldwide.",
     images: ["/heroimg.png"],
   },
 };
@@ -255,8 +255,8 @@ export default function Home() {
 
                 <div className="space-y-6 text-base leading-relaxed text-neutral-600">
                   <p>
-                    We bring you the authentic taste of Sri Lanka&rsquo;s finest tea, cultivated with care and
-                    passion in our island&rsquo;s highland estates. Experience the difference that generations of
+                    We bring you the authentic taste of <Link href="/ceylon-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors">Sri Lanka&rsquo;s finest Ceylon tea</Link>, cultivated with care and
+                    passion in our island&rsquo;s highland estates. <Link href="/our-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors">Explore our tea grades</Link> and experience the difference that generations of
                     expertise makes.
                   </p>
                   <div className="space-y-4">

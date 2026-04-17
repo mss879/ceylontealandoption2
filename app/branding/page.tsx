@@ -3,34 +3,34 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata = {
-    title: "Private Label Tea Branding — Your Brand, Our Legacy",
-    description: "Launch your premium tea brand with Ceylon Tea Land's world-class estate network. Custom packaging, export-grade Ceylon tea, and turnkey private label solutions for global brands.",
-    keywords: ["Private Label Tea", "White Label Tea", "Tea Branding Sri Lanka", "Custom Tea Packaging", "Tea Brand Development", "OEM Tea Manufacturing", "Private Label Ceylon Tea", "Tea Contract Manufacturing", "Wholesale Tea Branding"],
+    title: "Private Label Ceylon Tea — White Label & OEM Tea Manufacturing",
+    description: "Launch your tea brand with Ceylon Tea Land's estate network. Custom packaging, export-grade tea, and turnkey private label solutions.",
+    keywords: ["Private Label Ceylon Tea", "White Label Tea Sri Lanka", "OEM Tea Manufacturing", "Custom Tea Packaging", "Tea Brand Development", "Tea Contract Manufacturing"],
     authors: [{ name: "Ceylon Tea Land" }],
     alternates: {
         canonical: "/branding",
     },
     openGraph: {
-        title: "Private Label Branding | Ceylon Tea Land",
-        description: "Launch your premium tea brand with our world-class estate network. Custom packaging and turnkey solutions.",
+        title: "Private Label Ceylon Tea — White Label Solutions | Ceylon Tea Land",
+        description: "Launch your premium tea brand with our estate network. Custom packaging and turnkey private label solutions.",
         url: "https://ceylontealand.com/branding",
         siteName: "Ceylon Tea Land",
         images: [
             {
-                url: "/heroimg.png",
+                url: "/branding-hero.webp",
                 width: 1200,
                 height: 630,
-                alt: "Private Label Tea Branding — Ceylon Tea Land",
+                alt: "Private Label Ceylon Tea Branding — Custom Packaging Solutions",
             },
         ],
         locale: "en_US",
-        type: "website",
+        type: "article",
     },
     twitter: {
         card: "summary_large_image",
-        title: "Private Label Branding | Ceylon Tea Land",
-        description: "Launch your premium tea brand with our world-class estate network.",
-        images: ["/heroimg.png"],
+        title: "Private Label Ceylon Tea — White Label Solutions | Ceylon Tea Land",
+        description: "Launch your premium tea brand with our estate network and turnkey private label solutions.",
+        images: ["/branding-hero.webp"],
     },
 };
 
@@ -57,9 +57,22 @@ const processSteps = [
     },
 ];
 
+const brandingBreadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://ceylontealand.com' },
+        { '@type': 'ListItem', position: 2, name: 'Branding', item: 'https://ceylontealand.com/branding' },
+    ],
+};
+
 export default function BrandingPage() {
     return (
         <main className="bg-neutral-50 text-neutral-900 min-h-screen">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(brandingBreadcrumbJsonLd) }}
+            />
             {/* Hero Section */}
             <section className="relative min-h-screen overflow-hidden flex items-end pt-32 rounded-b-[60px] shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
                 <Image

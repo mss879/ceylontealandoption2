@@ -6,15 +6,15 @@ import { ArrowRight } from 'lucide-react'
 export const dynamic = 'force-dynamic'
 
 export const metadata = {
-  title: "Newsroom — Tea Insights & Guides",
-  description: "Read the latest guides, articles, and insights on the benefits, varieties, and culture of authentic Ceylon tea. Stay updated with Ceylon Tea Land's expert knowledge.",
-  keywords: ["Ceylon Tea News", "Sri Lankan Tea Articles", "Tea Guides", "Green Tea Benefits", "Black Tea Quality", "Tea Harvesting", "Ceylon Tea Blog", "Tea Industry News"],
+  title: "Ceylon Tea Blog — Expert Guides, News & Industry Insights",
+  description: "Read expert guides, articles, and insights on authentic Ceylon tea — from harvesting techniques to health benefits.",
+  keywords: ["Ceylon Tea Blog", "Tea Industry News", "Sri Lankan Tea Articles", "Tea Guides", "Ceylon Tea Insights", "Tea Harvesting Techniques"],
   alternates: {
     canonical: "/newsroom",
   },
   openGraph: {
-    title: "Newsroom & Articles | Ceylon Tea Land",
-    description: "Read the latest guides, articles, and insights on the benefits, varieties, and culture of authentic Ceylon tea.",
+    title: "Ceylon Tea Blog — Expert Guides & Insights | Ceylon Tea Land",
+    description: "Read expert guides, articles, and insights on authentic Ceylon tea from Sri Lanka.",
     url: "https://ceylontealand.com/newsroom",
     siteName: "Ceylon Tea Land",
     images: [
@@ -22,7 +22,7 @@ export const metadata = {
         url: "/heroimg.png",
         width: 1200,
         height: 630,
-        alt: "Ceylon Tea Land Newsroom — Tea Insights & Articles",
+        alt: "Ceylon Tea Land Blog — Expert Tea Guides and Industry Insights",
       },
     ],
     locale: "en_US",
@@ -30,11 +30,20 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Newsroom & Articles | Ceylon Tea Land",
-    description: "Read the latest guides, articles, and insights on authentic Ceylon tea.",
+    title: "Ceylon Tea Blog — Expert Guides & Insights | Ceylon Tea Land",
+    description: "Expert guides, articles, and insights on authentic Ceylon tea from Sri Lanka.",
     images: ["/heroimg.png"],
   },
 }
+
+const newsroomBreadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://ceylontealand.com' },
+    { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://ceylontealand.com/newsroom' },
+  ],
+};
 
 export default async function NewsroomPage() {
   const supabase = createClient()
@@ -46,6 +55,10 @@ export default async function NewsroomPage() {
 
   return (
     <main className="bg-neutral-50 text-neutral-900 min-h-screen pt-40 pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(newsroomBreadcrumbJsonLd) }}
+      />
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Header Section */}

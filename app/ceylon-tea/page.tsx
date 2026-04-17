@@ -3,34 +3,34 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata = {
-    title: "The Legacy of Ceylon Tea — History & Terroir",
-    description: "Discover the rich history, three distinct elevation terroirs, and 150+ years of dedication that created the world's most celebrated pure single-origin tea from Sri Lanka.",
-    keywords: ["Ceylon Tea History", "Tea Elevations Sri Lanka", "High Grown Ceylon Tea", "Mid Grown Tea", "Low Grown Tea", "Nuwara Eliya Tea", "Uva Tea Region", "Single Origin Ceylon Tea", "James Taylor Tea Pioneer", "Colombo Tea Auction"],
+    title: "History of Ceylon Tea — Elevations, Regions & 150 Years of Heritage",
+    description: "Discover 150+ years of Ceylon tea heritage — from James Taylor's first estate to Sri Lanka's three distinct elevation terroirs.",
+    keywords: ["Ceylon Tea History", "Tea Elevations Sri Lanka", "High Grown Ceylon Tea", "Mid Grown Tea", "Low Grown Tea", "Nuwara Eliya Tea", "James Taylor Tea Pioneer", "Colombo Tea Auction", "Single Origin Ceylon Tea"],
     authors: [{ name: "Ceylon Tea Land" }],
     alternates: {
         canonical: "/ceylon-tea",
     },
     openGraph: {
-        title: "The Legacy of Ceylon Tea | Ceylon Tea Land",
-        description: "Discover 150+ years of tea heritage — from James Taylor's first estate to the world's most celebrated single-origin tea.",
+        title: "History of Ceylon Tea — Elevations & Terroirs | Ceylon Tea Land",
+        description: "Discover 150+ years of tea heritage — from James Taylor's first estate to Sri Lanka's celebrated terroirs.",
         url: "https://ceylontealand.com/ceylon-tea",
         siteName: "Ceylon Tea Land",
         images: [
             {
-                url: "/heroimg.png",
+                url: "/about_hero_tea_estate.png",
                 width: 1200,
                 height: 630,
-                alt: "The Legacy of Ceylon Tea — History and Terroirs of Sri Lanka",
+                alt: "The Legacy of Ceylon Tea — Tea Estates and Terroirs of Sri Lanka",
             },
         ],
         locale: "en_US",
-        type: "website",
+        type: "article",
     },
     twitter: {
         card: "summary_large_image",
-        title: "The Legacy of Ceylon Tea | Ceylon Tea Land",
-        description: "Discover 150+ years of tea heritage — from James Taylor's first estate to the world's most celebrated single-origin tea.",
-        images: ["/heroimg.png"],
+        title: "History of Ceylon Tea — Elevations & Terroirs | Ceylon Tea Land",
+        description: "Discover 150+ years of Ceylon tea heritage and Sri Lanka's three distinct elevation terroirs.",
+        images: ["/about_hero_tea_estate.png"],
     },
 };
 
@@ -78,9 +78,22 @@ const elevations = [
     }
 ];
 
+const ceylonTeaBreadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://ceylontealand.com' },
+        { '@type': 'ListItem', position: 2, name: 'Ceylon Tea', item: 'https://ceylontealand.com/ceylon-tea' },
+    ],
+};
+
 export default function CeylonTeaPage() {
     return (
         <main className="bg-white text-neutral-900">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(ceylonTeaBreadcrumbJsonLd) }}
+            />
             {/* 1. Hero Section */}
             <section className="relative min-h-screen overflow-hidden flex items-end rounded-b-[60px] shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
                 <Image

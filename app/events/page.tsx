@@ -6,15 +6,15 @@ import { createClient } from '@/utils/supabase/server';
 export const dynamic = 'force-dynamic'
 
 export const metadata = {
-    title: "Events & Exhibitions — Global Trade Shows",
-    description: "Explore Ceylon Tea Land's international presence at the world's most prestigious food and beverage exhibitions — GULFOOD, PRODEXPO, IFE London, and more.",
-    keywords: ["Ceylon Tea Events", "Tea Trade Shows", "GULFOOD Dubai", "PRODEXPO Moscow", "IFE London", "Food Exhibition Sri Lanka", "Tea Expo", "Ceylon Tea Land Exhibitions", "World Food Russia"],
+    title: "Ceylon Tea Trade Shows & Exhibitions — GULFOOD, PRODEXPO & More",
+    description: "Explore Ceylon Tea Land's presence at the world's most prestigious trade shows — GULFOOD, PRODEXPO, IFE London, and more.",
+    keywords: ["Ceylon Tea Events", "Tea Trade Shows", "GULFOOD Dubai", "PRODEXPO Moscow", "IFE London", "Food Exhibition Sri Lanka", "Tea Expo"],
     alternates: {
         canonical: "/events",
     },
     openGraph: {
-        title: "Events & Exhibitions | Ceylon Tea Land",
-        description: "Discover our international presence at the world's most prestigious food and beverage exhibitions.",
+        title: "Ceylon Tea Trade Shows & Exhibitions | Ceylon Tea Land",
+        description: "Explore Ceylon Tea Land's presence at the world's most prestigious food and beverage exhibitions.",
         url: "https://ceylontealand.com/events",
         siteName: "Ceylon Tea Land",
         images: [
@@ -22,7 +22,7 @@ export const metadata = {
                 url: "/heroimg.png",
                 width: 1200,
                 height: 630,
-                alt: "Ceylon Tea Land at Global Trade Shows & Exhibitions",
+                alt: "Ceylon Tea Land at International Trade Shows and Exhibitions",
             },
         ],
         locale: "en_US",
@@ -30,10 +30,19 @@ export const metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Events & Exhibitions | Ceylon Tea Land",
-        description: "Discover our international presence at the world's most prestigious food and beverage exhibitions.",
+        title: "Ceylon Tea Trade Shows & Exhibitions | Ceylon Tea Land",
+        description: "Explore Ceylon Tea Land's presence at GULFOOD, PRODEXPO, IFE London, and more.",
         images: ["/heroimg.png"],
     },
+};
+
+const eventsBreadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://ceylontealand.com' },
+        { '@type': 'ListItem', position: 2, name: 'Events', item: 'https://ceylontealand.com/events' },
+    ],
 };
 
 export default async function EventsPage() {
@@ -72,6 +81,10 @@ export default async function EventsPage() {
 
     return (
         <main className="bg-neutral-50 text-neutral-900 min-h-screen">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(eventsBreadcrumbJsonLd) }}
+            />
             {/* Hero Section */}
             <section className="relative min-h-[40vh] pt-24 pb-12 md:pt-32 md:pb-16 overflow-hidden flex flex-col items-center justify-center bg-[#f4f1ea] rounded-b-[40px] shadow-[0_10px_20px_rgba(0,0,0,0.03)] border-b border-black/5 mt-[-20px]">
                 {/* Minimalist Background Accents */}

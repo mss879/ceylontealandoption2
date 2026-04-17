@@ -3,40 +3,53 @@ import Image from 'next/image'
 import { Facebook, Instagram, Phone, Mail, MessageCircle, ArrowRight } from 'lucide-react'
 
 export const metadata = {
-  title: "About Us — Our Story & Heritage | Premium Tea Exporters",
-  description: "Discover the legacy of Ceylon Tea Land. Over 50 years of excellence exporting 100% pure Ceylon tea from Sri Lanka's finest highland estates to 40+ countries worldwide.",
-  keywords: ["About Ceylon Tea Land", "Ceylon Tea Land Team", "Sri Lanka Tea Estate", "Tea Export Company", "Ceylon Tea History", "Tea Manufacturer Sri Lanka", "Pure Ceylon Tea Heritage"],
+  title: "About Ceylon Tea Land — 50+ Years of Sri Lankan Tea Excellence",
+  description: "Discover Ceylon Tea Land's legacy — over 50 years exporting pure Ceylon tea from Sri Lanka's finest highland estates to 40+ countries.",
+  keywords: ["About Ceylon Tea Land", "Ceylon Tea Land Team", "Sri Lanka Tea Factory", "Tea Manufacturer Colombo", "Ceylon Tea Company", "Tea Export Sri Lanka"],
   authors: [{ name: "Ceylon Tea Land" }],
   alternates: {
     canonical: "/about",
   },
   openGraph: {
-    title: "About Us | Ceylon Tea Land",
-    description: "Discover the legacy of Ceylon Tea Land — Over 50 years of excellence exporting authentic Ceylon tea worldwide.",
+    title: "About Ceylon Tea Land — Our Story & Heritage",
+    description: "Discover Ceylon Tea Land's legacy — over 50 years exporting pure Ceylon tea to 40+ countries worldwide.",
     url: "https://ceylontealand.com/about",
     siteName: "Ceylon Tea Land",
     images: [
       {
-        url: "/heroimg.png",
+        url: "/about-hero.webp",
         width: 1200,
         height: 630,
-        alt: "About Ceylon Tea Land — Our Story and Heritage",
+        alt: "About Ceylon Tea Land — Our Team and Tea Heritage",
       },
     ],
     locale: "en_US",
-    type: "website",
+    type: "article",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About Us | Ceylon Tea Land",
-    description: "Discover the legacy of Ceylon Tea Land — Over 50 years of excellence exporting authentic Ceylon tea worldwide.",
-    images: ["/heroimg.png"],
+    title: "About Ceylon Tea Land — Our Story & Heritage",
+    description: "Discover Ceylon Tea Land's legacy — over 50 years exporting pure Ceylon tea to 40+ countries.",
+    images: ["/about-hero.webp"],
   },
+};
+
+const aboutBreadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://ceylontealand.com' },
+    { '@type': 'ListItem', position: 2, name: 'About Us', item: 'https://ceylontealand.com/about' },
+  ],
 };
 
 export default function AboutPage() {
   return (
     <main className="bg-white text-neutral-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutBreadcrumbJsonLd) }}
+      />
       {/* Hero Section - Matching Homepage Style */}
       <section className="relative min-h-screen overflow-hidden flex items-end rounded-b-[60px] shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
         <Image
@@ -131,7 +144,7 @@ export default function AboutPage() {
               </div>
               <div className="space-y-6 text-lg text-neutral-700 leading-relaxed">
                 <p>
-                  Ceylon Tea Land Factory operates with a team that is 100% dedicated to providing quality products and efficient service. Our company attributes its success to our dynamic workforce and dependable customers worldwide.
+                  Ceylon Tea Land Factory operates with a team that is 100% dedicated to providing quality products and efficient service. From <Link href="/our-tea" className="underline decoration-emerald-700/40 hover:decoration-emerald-700 transition-colors">our curated tea grades</Link> to <Link href="/branding" className="underline decoration-emerald-700/40 hover:decoration-emerald-700 transition-colors">private label solutions</Link>, our company attributes its success to our dynamic workforce and dependable customers worldwide.
                 </p>
                 <div className="block lg:hidden">
                   <div className="relative max-w-xl mx-auto my-8">
@@ -418,7 +431,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-2 gap-4">
               <div className="space-y-4">
                 <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
-                  <Image src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Scenic Ceylon tea plantation with rows of tea bushes" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover hover:scale-105 transition-transform duration-300" />
+                  <Image src="/about_tea_plantation.webp" alt="Scenic Ceylon tea plantation with rows of tea bushes" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover hover:scale-105 transition-transform duration-300" />
                 </div>
                 <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
                   <Image src="/premium_authentic_experience.png" alt="Traditional Ceylon tea ceremony experience" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover hover:scale-105 transition-transform duration-300" />
@@ -426,10 +439,10 @@ export default function AboutPage() {
               </div>
               <div className="space-y-4 pt-8">
                 <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
-                  <Image src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Artisan tea processing in a Sri Lankan tea factory" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover hover:scale-105 transition-transform duration-300" />
+                  <Image src="/about_tea_factory.webp" alt="Artisan tea processing in a Sri Lankan tea factory" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover hover:scale-105 transition-transform duration-300" />
                 </div>
                 <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
-                  <Image src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Fresh green tea leaves ready for hand-plucking" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover hover:scale-105 transition-transform duration-300" />
+                  <Image src="/about_tea_leaves.webp" alt="Fresh green tea leaves ready for hand-plucking" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover hover:scale-105 transition-transform duration-300" />
                 </div>
               </div>
             </div>

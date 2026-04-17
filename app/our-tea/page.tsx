@@ -3,15 +3,15 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Leaf } from 'lucide-react'
 
 export const metadata = {
-  title: "Our Tea — Black, Green & Flavoured Ceylon Tea | Premium Tea Exporters",
-  description: "Explore our extensive collection of premium Ceylon tea grades — from robust BOP and BOPF black teas to delicate green teas and aromatic flavoured blends, available for bulk wholesale and retail.",
-  keywords: ["Ceylon Tea Grades", "Black Tea", "Green Tea", "Flavored Tea", "Tea Exporter", "Buy Ceylon Black Tea Online", "Premium Tea Exporters Sri Lanka", "Authentic Sri Lankan Tea", "Bulk Ceylon Tea", "BOP Tea Grade", "BOPF Tea", "Ceylon Tea Wholesale Catalog", "Loose Leaf Ceylon Tea"],
+  title: "Ceylon Tea Grades — Black, Green & Flavoured Tea Catalogue",
+  description: "Explore our collection of premium Ceylon tea grades — robust BOP and BOPF black teas, delicate green teas, and aromatic flavoured blends.",
+  keywords: ["Ceylon Tea Grades", "BOP Tea Grade", "BOPF Tea", "Green Tea Sri Lanka", "Flavoured Ceylon Tea", "Loose Leaf Ceylon Tea", "Ceylon Tea Wholesale Catalog"],
   authors: [{ name: "Ceylon Tea Land" }],
   alternates: {
     canonical: "/our-tea",
   },
   openGraph: {
-    title: "Our Tea Grades | Ceylon Tea Land",
+    title: "Ceylon Tea Grades — Full Collection | Ceylon Tea Land",
     description: "Explore our extensive collection of premium Ceylon tea grades — black, green, and flavoured teas for wholesale and retail.",
     url: "https://ceylontealand.com/our-tea",
     siteName: "Ceylon Tea Land",
@@ -20,7 +20,7 @@ export const metadata = {
         url: "/heroimg.png",
         width: 1200,
         height: 630,
-        alt: "Our Ceylon Tea Grades — Premium Black, Green & Flavoured Teas",
+        alt: "Ceylon Tea Grades — Premium Black, Green & Flavoured Teas from Ceylon Tea Land",
       },
     ],
     locale: "en_US",
@@ -28,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Tea Grades | Ceylon Tea Land",
-    description: "Premium Ceylon tea grades — black, green, and flavoured teas for wholesale and retail.",
+    title: "Ceylon Tea Grades — Full Collection | Ceylon Tea Land",
+    description: "Robust BOP black teas, delicate green teas, and aromatic flavoured blends from Sri Lanka.",
     images: ["/heroimg.png"],
   },
 };

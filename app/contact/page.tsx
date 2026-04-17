@@ -2,17 +2,18 @@ import { ArrowUpRight, Phone } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ContactForm } from './ContactForm'
+import { LazyMap } from './LazyMap'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Contact Us — Ceylon Tea Inquiries',
-  description: 'Contact Ceylon Tea Land for bulk tea imports, retail partnerships, private labeling, and wholesale inquiries. Our tea experts are ready to help you find the perfect blend.',
-  keywords: ['Contact Ceylon Tea Land', 'Tea Import Inquiry', 'Bulk Tea Supplier Contact', 'Private Label Tea Sri Lanka', 'Wholesale Tea Contact', 'Ceylon Tea Partnership'],
+  title: 'Contact Ceylon Tea Land — Bulk Import & Partnership Inquiries',
+  description: 'Contact Ceylon Tea Land for bulk imports, retail partnerships, and private labeling. Our tea experts are ready to help.',
+  keywords: ['Contact Ceylon Tea Land', 'Tea Import Inquiry', 'Bulk Tea Partner', 'Ceylon Tea Partnership', 'Tea Supplier Contact Sri Lanka'],
   alternates: {
     canonical: '/contact',
   },
   openGraph: {
-    title: 'Contact Us | Ceylon Tea Land',
+    title: 'Contact Ceylon Tea Land — Import & Partnership Inquiries',
     description: 'Get in touch with our tea experts for bulk imports, retail partnerships, and private labeling inquiries.',
     url: 'https://ceylontealand.com/contact',
     siteName: 'Ceylon Tea Land',
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
         url: '/heroimg.png',
         width: 1200,
         height: 630,
-        alt: 'Contact Ceylon Tea Land',
+        alt: 'Contact Ceylon Tea Land — Get in Touch',
       },
     ],
     locale: 'en_US',
@@ -29,15 +30,28 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Contact Us | Ceylon Tea Land',
-    description: 'Get in touch with our tea experts for bulk imports, retail partnerships, and private labeling inquiries.',
+    title: 'Contact Ceylon Tea Land — Import & Partnership Inquiries',
+    description: 'Get in touch with our tea experts for bulk imports, retail partnerships, and private labeling.',
     images: ['/heroimg.png'],
   },
+};
+
+const contactBreadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://ceylontealand.com' },
+    { '@type': 'ListItem', position: 2, name: 'Contact', item: 'https://ceylontealand.com/contact' },
+  ],
 };
 
 export default function ContactPage() {
   return (
     <main className="flex-1">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactBreadcrumbJsonLd) }}
+      />
       <div className="min-h-screen bg-[#f4f1ea] text-neutral-900 font-sans">
         {/* Main Content Wrapper */}
         <div className="container mx-auto px-6 pt-32 pb-20">
@@ -108,16 +122,11 @@ export default function ContactPage() {
 
         {/* Map Section */}
         <div className="h-[500px] w-full bg-neutral-200 relative">
-          <iframe
+          <LazyMap
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15842.180975126723!2d79.90416182701762!3d6.944822419718853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x449e745b4a7b490a!2sCeylon%20Tea%20Land%20(Pvt)%20Ltd.!5e0!3m2!1sen!2slk!4v1622456834664!5m2!1sen!2slk"
-            width="100%"
-            height="100%"
-            allowFullScreen
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
             title="Ceylon Tea Land office location on Google Maps"
             className="border-0 grayscale opacity-80 hover:grayscale-0 hover:opacity-100 transition-all duration-700"
-          ></iframe>
+          />
         </div>
       </div>
     </main>

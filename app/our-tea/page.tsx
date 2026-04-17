@@ -17,7 +17,7 @@ export const metadata = {
     siteName: "Ceylon Tea Land",
     images: [
       {
-        url: "/heroimg.png",
+        url: "https://ceylontealand.com/heroimg.webp",
         width: 1200,
         height: 630,
         alt: "Ceylon Tea Grades — Premium Black, Green & Flavoured Teas from Ceylon Tea Land",
@@ -30,7 +30,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Ceylon Tea Grades — Full Collection | Ceylon Tea Land",
     description: "Robust BOP black teas, delicate green teas, and aromatic flavoured blends from Sri Lanka.",
-    images: ["/heroimg.png"],
+    images: ["https://ceylontealand.com/heroimg.webp"],
   },
 };
 

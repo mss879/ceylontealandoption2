@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { CuratedProducts } from '@/components/curated-products';
 import { Preloader } from '@/components/Preloader';
 export const metadata = {
-  title: "Premium Ceylon Tea Exporter from Sri Lanka",
+  title: "Premium Ceylon Tea Exporters from Sri Lanka | Ceylon Tea Land",
   description: "Global exporters of authentic Ceylon tea. Partner with our Sri Lankan estate network for fresh, hand-picked tea delivered worldwide.",
   keywords: ["Ceylon Tea Exporter", "Premium Ceylon Tea", "Sri Lanka Tea Export", "Bulk Tea Supplier", "Tea Bags Manufacturer Sri Lanka", "Ceylon Tea Wholesale"],
   authors: [{ name: "Ceylon Tea Land" }],
@@ -18,7 +18,7 @@ export const metadata = {
     siteName: "Ceylon Tea Land",
     images: [
       {
-        url: "/heroimg.png",
+        url: "https://ceylontealand.com/heroimg.webp",
         width: 1200,
         height: 630,
         alt: "Ceylon Tea Land — Premium Ceylon Tea Exporters from Sri Lanka",
@@ -31,7 +31,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Ceylon Tea Land — Premium Ceylon Tea Exporters from Sri Lanka",
     description: "Global exporters of authentic Ceylon tea. Fresh, hand-picked tea delivered worldwide.",
-    images: ["/heroimg.png"],
+    images: ["https://ceylontealand.com/heroimg.webp"],
   },
 };
 
@@ -137,7 +137,7 @@ const brandPartners = [
   },
   {
     name: 'RIVON',
-    href: '#',
+    href: 'https://ceylontealand.com/branding',
     logo: '/rivon-logo.webp',
   },
   {
@@ -167,14 +167,65 @@ const partnerBrands = [
   "rivonelite"
 ];
 
+const homepageFaqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'What is Ceylon tea?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ceylon tea refers to tea produced in Sri Lanka (formerly called Ceylon). It is renowned worldwide for its distinct flavour, golden colour, and brisk taste. Sri Lanka is one of the top tea-exporting countries, producing black, green, white, and flavoured teas across three elevation zones.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How can I import Ceylon tea in bulk?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ceylon Tea Land offers bulk import solutions for distributors and retailers worldwide. Contact our sales team to discuss your requirements, request samples, and receive a custom quotation including CIF or FOB pricing, minimum order quantities, and lead times.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Do you offer private label or white label tea services?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes, we provide turnkey private label and white label tea manufacturing services. This includes custom blending, bespoke packaging design, and global shipping — allowing you to launch your own premium Ceylon tea brand with our estate network.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'What tea grades does Ceylon Tea Land export?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'We export a wide range of Ceylon tea grades including BOP (Broken Orange Pekoe), BOPF (Broken Orange Pekoe Fannings), OP (Orange Pekoe), artisan green teas, and aromatic flavoured blends. All teas are sourced from Sri Lanka\'s finest highland estates.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Which countries does Ceylon Tea Land export to?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ceylon Tea Land exports to over 40 countries worldwide, including Russia, the Middle East, Europe, North America, and Central Asia. We have a strong international presence with regular participation in exhibitions like GULFOOD, PRODEXPO, and IFE London.',
+      },
+    },
+  ],
+};
+
 export default function Home() {
   return (
     <>
       <Preloader />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFaqJsonLd) }}
+      />
       <main className="bg-white text-neutral-900">
         <section className="relative min-h-screen overflow-hidden flex items-end rounded-b-[60px] shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
           <Image
-            src="/heroimg.png"
+            src="/heroimg.webp"
             alt="Scenic tea fields in the highlands of Sri Lanka"
             fill
             className="object-cover"
@@ -190,7 +241,7 @@ export default function Home() {
                     → Premium Ceylon Tea Export
                   </span>
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-neutral-900">
-                    Global Exporters of Authentic Ceylon Tea
+                    Premium Ceylon Tea Exporters — Direct from Sri Lanka
                   </h1>
                   <p className="text-base md:text-lg leading-relaxed text-neutral-700">
                     Partner with our estate network for fresh, hand-picked Ceylon tea delivered worldwide with reliable logistics and export-grade consistency.

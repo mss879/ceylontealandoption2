@@ -28,6 +28,8 @@ const footerNavColumns = [
         title: 'Account & Support',
         links: [
             { label: 'Contact Us', href: '/contact' },
+            { label: 'Privacy Policy', href: '/privacy-policy' },
+            { label: 'Terms of Service', href: '/terms-of-service' },
         ],
     },
     {
@@ -110,17 +112,17 @@ export function Footer() {
                         <a
                             href="https://www.arcai.agency"
                             target="_blank"
-                            rel="noopener noreferrer"
-                            title="ARC AI - Web Design & Digital Solutions"
+                            rel="noopener"
+                            title="ARC AI — Web Design, SEO & AI-Powered Digital Solutions in Sri Lanka"
                             className="inline-flex items-center hover:opacity-80 transition-opacity"
                         >
                             Designed & Developed by{' '}
                             <Image
                                 src="/arc logo.png"
-                                alt="ARC AI - Web Design & Digital Solutions"
+                                alt="ARC AI — Web Design & AI Agency Sri Lanka"
                                 width={350}
                                 height={180}
-                                className="tea-footer__meta-logo scale-150 ml-3 origin-left w-auto"
+                                className="tea-footer__meta-logo scale-[2] ml-4 origin-left w-auto"
                                 loading="lazy"
                                 sizes="100px"
                             />

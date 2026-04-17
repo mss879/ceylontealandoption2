@@ -17,7 +17,7 @@ export const metadata = {
         siteName: "Ceylon Tea Land",
         images: [
             {
-                url: "/branding-hero.webp",
+                url: "https://ceylontealand.com/branding-hero.webp",
                 width: 1200,
                 height: 630,
                 alt: "Private Label Ceylon Tea Branding — Custom Packaging Solutions",
@@ -30,7 +30,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "Private Label Ceylon Tea — White Label Solutions | Ceylon Tea Land",
         description: "Launch your premium tea brand with our estate network and turnkey private label solutions.",
-        images: ["/branding-hero.webp"],
+        images: ["https://ceylontealand.com/branding-hero.webp"],
     },
 };
 

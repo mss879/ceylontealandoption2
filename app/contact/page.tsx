@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: 'Ceylon Tea Land',
     images: [
       {
-        url: '/heroimg.png',
+        url: 'https://ceylontealand.com/heroimg.webp',
         width: 1200,
         height: 630,
         alt: 'Contact Ceylon Tea Land — Get in Touch',
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Contact Ceylon Tea Land — Import & Partnership Inquiries',
     description: 'Get in touch with our tea experts for bulk imports, retail partnerships, and private labeling.',
-    images: ['/heroimg.png'],
+    images: ['https://ceylontealand.com/heroimg.webp'],
   },
 };
 

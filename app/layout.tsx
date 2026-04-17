@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     siteName: 'Ceylon Tea Land',
     images: [
       {
-        url: '/heroimg.png',
+        url: 'https://ceylontealand.com/heroimg.webp',
         width: 1200,
         height: 630,
         alt: 'Ceylon Tea Land — Premium Ceylon Tea Exporters from Sri Lanka',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Ceylon Tea Land | Premium Global Tea Exporters',
     description: 'Global Exporters of Authentic Ceylon Tea from Sri Lanka.',
-    images: ['/heroimg.png'],
+    images: ['https://ceylontealand.com/heroimg.webp'],
   },
   robots: {
     index: true,
@@ -144,6 +144,28 @@ const localBusinessJsonLd = {
   priceRange: '$$',
 };
 
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Ceylon Tea Land',
+  url: 'https://ceylontealand.com',
+  description: 'Global Exporters of Authentic Ceylon Tea from Sri Lanka.',
+  publisher: {
+    '@type': 'Organization',
+    name: 'Ceylon Tea Land',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://ceylontealand.com/clogo.png',
+    },
+  },
+  creator: {
+    '@type': 'Organization',
+    name: 'ARC AI',
+    url: 'https://www.arcai.agency',
+    description: 'Web Design, SEO & AI-Powered Digital Solutions Agency in Sri Lanka',
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -162,6 +184,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(localBusinessJsonLd),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd),
           }}
         />
       </head>

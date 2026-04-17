@@ -19,7 +19,7 @@ export const metadata = {
     siteName: "Ceylon Tea Land",
     images: [
       {
-        url: "/heroimg.png",
+        url: "https://ceylontealand.com/heroimg.webp",
         width: 1200,
         height: 630,
         alt: "Ceylon Tea Land Blog — Expert Tea Guides and Industry Insights",
@@ -32,7 +32,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "Ceylon Tea Blog — Expert Guides & Insights | Ceylon Tea Land",
     description: "Expert guides, articles, and insights on authentic Ceylon tea from Sri Lanka.",
-    images: ["/heroimg.png"],
+    images: ["https://ceylontealand.com/heroimg.webp"],
   },
 }
 
@@ -96,7 +96,7 @@ export default async function NewsroomPage() {
                 </div>
                 <div className="p-8 flex flex-col flex-1">
                   <p className="text-sm font-medium text-[#b58b54] mb-3 font-serif italic">
-                    {new Date(post.created_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                    <time dateTime={post.created_at}>{new Date(post.created_at).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</time>
                   </p>
                   <h3 className="font-bold text-neutral-900 leading-tight text-2xl mb-4 group-hover:text-[#b58b54] transition-colors">{post.title}</h3>
                   <div className="mt-auto pt-4 flex items-center gap-2 text-sm font-semibold text-neutral-900">

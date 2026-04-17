@@ -17,7 +17,7 @@ export const metadata = {
         siteName: "Ceylon Tea Land",
         images: [
             {
-                url: "/about_hero_tea_estate.png",
+                url: "https://ceylontealand.com/about_hero_tea_estate.png",
                 width: 1200,
                 height: 630,
                 alt: "The Legacy of Ceylon Tea — Tea Estates and Terroirs of Sri Lanka",
@@ -30,7 +30,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "History of Ceylon Tea — Elevations & Terroirs | Ceylon Tea Land",
         description: "Discover 150+ years of Ceylon tea heritage and Sri Lanka's three distinct elevation terroirs.",
-        images: ["/about_hero_tea_estate.png"],
+        images: ["https://ceylontealand.com/about_hero_tea_estate.png"],
     },
 };
 

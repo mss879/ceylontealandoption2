@@ -17,7 +17,7 @@ export const metadata = {
     siteName: "Ceylon Tea Land",
     images: [
       {
-        url: "/about-hero.webp",
+        url: "https://ceylontealand.com/about-hero.webp",
         width: 1200,
         height: 630,
         alt: "About Ceylon Tea Land — Our Team and Tea Heritage",
@@ -30,7 +30,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "About Ceylon Tea Land — Our Story & Heritage",
     description: "Discover Ceylon Tea Land's legacy — over 50 years exporting pure Ceylon tea to 40+ countries.",
-    images: ["/about-hero.webp"],
+    images: ["https://ceylontealand.com/about-hero.webp"],
   },
 };
 

@@ -19,9 +19,9 @@ const footerNavColumns = [
     {
         title: 'Products',
         links: [
-            { label: 'Tea Bags', href: '/#tea-bags' },
-            { label: 'Bulk Tea', href: '/#bulk-tea' },
-            { label: 'Green Tea', href: '/#green-tea' },
+            { label: 'Tea Bags', href: '/our-tea' },
+            { label: 'Bulk Tea', href: '/our-tea' },
+            { label: 'Green Tea', href: '/our-tea' },
         ],
     },
     {

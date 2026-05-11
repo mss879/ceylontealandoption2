@@ -77,7 +77,7 @@ export function Preloader() {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0, filter: "blur(20px)" }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="fixed inset-0 z-[999999] flex flex-col items-center justify-center bg-[#0a0a0a] text-white"
+          className="fixed inset-0 z-[999999] flex flex-col items-center justify-center bg-[#ead9bc] text-neutral-900"
         >
           {/* High-end Ambient Glow */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-[#d9b482]/10 blur-[130px] rounded-full pointer-events-none" />
@@ -140,7 +140,7 @@ export function Preloader() {
               </defs>
 
               {/* Realistic Steam Layer (Behind front rim, above liquid) */}
-              <g filter="url(#softBlur)" stroke="#ffffff" fill="none" strokeWidth="8" strokeLinecap="round" className="steam-group">
+              <g filter="url(#softBlur)" stroke="#d9b482" fill="none" strokeWidth="8" strokeLinecap="round" className="steam-group">
                 <path d="M 80,75 C 60,30 110,10 80,-30" className="steam-1" />
                 <path d="M 100,75 C 130,40 70,10 100,-40" className="steam-2" />
                 <path d="M 120,75 C 100,20 150,0 120,-35" className="steam-3" />
@@ -177,16 +177,16 @@ export function Preloader() {
           {/* Typing Text & Timeline Sync */}
           <div className="flex flex-col items-center gap-6 w-full max-w-md px-6 z-10">
              <div className="flex items-center justify-center h-6">
-               <span className="text-[#d9b482] text-sm md:text-base font-light uppercase tracking-[0.25em] text-center inline-block">
+               <span className="text-black text-sm md:text-base font-medium uppercase tracking-[0.25em] text-center inline-block">
                  {displayedText}
                  <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100 ml-1 font-normal`}>|</span>
                </span>
              </div>
              
              {/* Progress bar perfectly synced to exactly 2.5s */}
-             <div className="w-48 h-[1px] bg-white/5 rounded-full overflow-hidden">
+             <div className="w-48 h-[1px] bg-black/10 rounded-full overflow-hidden">
                 <motion.div 
-                   className="h-full bg-gradient-to-r from-transparent via-[#d9b482] to-transparent origin-left"
+                   className="h-full bg-gradient-to-r from-transparent via-[#b58b54] to-transparent origin-left"
                    initial={{ width: "0%", opacity: 0 }}
                    animate={{ width: "100%", opacity: 1 }}
                    transition={{ duration: 2.5, ease: "easeInOut" }}

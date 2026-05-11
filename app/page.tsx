@@ -237,20 +237,17 @@ export default function Home() {
             <div className="max-w-3xl">
               <div className="space-y-6 md:space-y-8 rounded-[2rem] bg-white/85 p-6 md:p-8 text-neutral-900 shadow-xl backdrop-blur-md animate-in fade-in slide-in-from-bottom-8 duration-1000 mx-auto md:mx-0">
                 <div className="space-y-4">
-                  <span className="text-xs md:text-sm font-medium uppercase tracking-[0.3em] text-emerald-700">
-                    → Premium Ceylon Tea Export
-                  </span>
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-neutral-900">
-                    Premium Ceylon Tea Exporters — Direct from Sri Lanka
+                    Ceylon Tea Exporters <br /> Direct from Sri Lanka
                   </h1>
                   <p className="text-base md:text-lg leading-relaxed text-neutral-700">
-                    Partner with our estate network for fresh, hand-picked Ceylon tea delivered worldwide with reliable logistics and export-grade consistency.
+                    Source 100% pure, hand-picked Ceylon tea directly from Sri Lanka&apos;s finest estates. We guarantee export-grade consistency, unmatched freshness, and seamless global logistics for your brand.
                   </p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4">
                   <Link
-                    href="#catalogue"
+                    href="/our-tea"
                     className="group inline-flex justify-center items-center gap-3 rounded-full bg-neutral-900 px-8 py-4 text-white transition-all duration-300 hover:scale-105 hover:bg-neutral-800 hover:shadow-xl hover:shadow-neutral-500/20 w-full sm:w-auto"
                   >
                     <span className="font-semibold text-lg">Our Tea</span>
@@ -261,7 +258,7 @@ export default function Home() {
                   </Link>
 
                   <Link
-                    href="#contact"
+                    href="/contact"
                     className="inline-flex justify-center items-center gap-3 rounded-full border border-neutral-900 px-8 py-4 text-lg font-semibold text-neutral-900 transition-all duration-300 hover:bg-neutral-900 hover:text-white w-full sm:w-auto"
                   >
                     Contact Us
@@ -294,7 +291,7 @@ export default function Home() {
 
                   <div className="flex flex-wrap gap-4">
                     <Link
-                      href="#our-tea"
+                      href="/our-tea"
                       className="group inline-flex items-center gap-3 rounded-full bg-[#d9b482] px-6 py-3 text-sm font-semibold text-neutral-900 shadow-lg shadow-[#b58b54]/20 transition hover:scale-[1.02] hover:bg-[#caa572]"
                     >
                       <span>Explore Our Teas</span>

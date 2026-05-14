@@ -3,16 +3,16 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Leaf } from 'lucide-react'
 
 export const metadata = {
-  title: "Black Tea in Sri Lanka | Premium Ceylon Black Tea Grades — Ceylon Tea Land",
-  description: "Discover premium black tea from Sri Lanka — BOP, BOPF, and OP grades sourced from highland estates. Browse our full catalogue of Ceylon black tea, green tea, and flavoured blends for wholesale and retail.",
-  keywords: ["black tea in Sri Lanka", "black tea", "Ceylon black tea", "BOP tea grade", "BOPF tea", "green tea Sri Lanka", "flavoured Ceylon tea", "Ceylon tea wholesale catalog"],
+  title: "Our Tea Collection | Premium Ceylon Tea — Black, Green & Flavoured | Ceylon Tea Land",
+  description: "Browse our full collection of premium Ceylon tea — orthodox black tea grades, pure green tea, and aromatic flavoured blends. Sourced from Sri Lanka's finest estates for wholesale and retail.",
+  keywords: ["Ceylon tea collection", "Ceylon tea", "Sri Lanka tea", "tea catalogue", "black tea Sri Lanka", "green tea Sri Lanka", "flavoured tea Sri Lanka", "Ceylon tea wholesale"],
   authors: [{ name: "Ceylon Tea Land" }],
   alternates: {
     canonical: "/our-tea",
   },
   openGraph: {
-    title: "Black Tea in Sri Lanka — Premium Ceylon Tea Grades | Ceylon Tea Land",
-    description: "Discover premium black tea from Sri Lanka — BOP, BOPF, and OP grades. Full catalogue of Ceylon black tea, green tea, and flavoured teas.",
+    title: "Our Tea Collection — Premium Ceylon Tea | Ceylon Tea Land",
+    description: "Browse our full collection of premium Ceylon tea — black, green, and flavoured blends from Sri Lanka's finest estates.",
     url: "https://ceylontealand.com/our-tea",
     siteName: "Ceylon Tea Land",
     images: [
@@ -20,7 +20,7 @@ export const metadata = {
         url: "https://ceylontealand.com/heroimg.webp",
         width: 1200,
         height: 630,
-        alt: "Black Tea in Sri Lanka — Premium Ceylon Black Tea, Green Tea & Flavoured Teas from Ceylon Tea Land",
+        alt: "Our Tea Collection — Premium Ceylon Black Tea, Green Tea & Flavoured Teas",
       },
     ],
     locale: "en_US",
@@ -28,13 +28,22 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Black Tea in Sri Lanka — Ceylon Tea Grades | Ceylon Tea Land",
-    description: "Premium black tea from Sri Lanka. BOP, BOPF and OP grades plus green tea and flavoured blends.",
+    title: "Our Tea Collection — Premium Ceylon Tea | Ceylon Tea Land",
+    description: "Browse the full range of premium Ceylon tea — black, green, and flavoured blends for wholesale and retail.",
     images: ["https://ceylontealand.com/heroimg.webp"],
   },
 };
 
 import { createClient } from '@/utils/supabase/server'
+
+const ourTeaBreadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://ceylontealand.com' },
+    { '@type': 'ListItem', position: 2, name: 'Our Tea', item: 'https://ceylontealand.com/our-tea' },
+  ],
+};
 
 export default async function OurTeaPage() {
   const supabase = createClient()
@@ -72,8 +81,14 @@ export default async function OurTeaPage() {
     })) || []
   };
 
+
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ourTeaBreadcrumbJsonLd) }}
+      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -93,38 +108,15 @@ export default async function OurTeaPage() {
             Our Collection
           </div>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-[1.05] tracking-tight text-white mb-8">
-            Premium Black Tea <br className="hidden md:block" /> <span className="font-serif italic text-[#b58b54]">from Sri Lanka</span>
+            Premium Ceylon <br className="hidden md:block" /> <span className="font-serif italic text-[#b58b54]">Tea Collection</span>
           </h1>
           <p className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto leading-relaxed font-light">
-            From the misty hills of Sri Lanka to your cup. Explore our extensive collection of premium Ceylon black tea grades,
-            alongside our curated <a href="/our-tea/green-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54]">green tea</a> and <a href="/our-tea/flavoured-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54]">flavoured tea</a> collections.
+            From the misty hills of Sri Lanka to your cup. Explore our full range of premium <a href="/our-tea/black-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54]">black tea</a>, <a href="/our-tea/green-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54]">green tea</a>, and <a href="/our-tea/flavoured-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54]">flavoured tea</a> from Ceylon.
           </p>
         </div>
       </section>
 
-      {/* Black Tea Content Section — SEO */}
-      <section className="bg-[#f4f1ea] py-20 lg:py-24 border-b border-[#ead9bc]">
-        <div className="max-w-4xl mx-auto px-6">
-          <div className="flex items-center gap-3 text-sm font-medium uppercase tracking-[0.2em] text-[#b58b54] mb-6">
-            <Leaf className="w-4 h-4" />
-            <span>About Our Black Tea</span>
-          </div>
-          <h2 className="text-3xl md:text-4xl font-semibold text-neutral-900 leading-tight tracking-tight mb-8">
-            Black Tea from Sri Lanka&apos;s Highland Estates
-          </h2>
-          <div className="space-y-5 text-lg text-neutral-600 leading-relaxed">
-            <p>
-              Sri Lanka produces some of the world&apos;s finest black tea, cultivated across three distinct elevation zones that each impart unique flavour characteristics. As one of the leading <a href="/" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors font-medium">tea exporters in Sri Lanka</a>, Ceylon Tea Land offers the complete range of orthodox black tea grades — from the brisk, aromatic <strong>BOP (Broken Orange Pekoe)</strong> to the full-bodied <strong>BOPF (Broken Orange Pekoe Fannings)</strong> and the elegant wiry-leaf <strong>OP (Orange Pekoe)</strong>.
-            </p>
-            <p>
-              Our black tea is sourced from Nuwara Eliya, Dimbula, Uva, and Sabaragamuwa regions — each recognised for their distinctive terroir. High-grown teas above 4,000 ft produce the most delicate, golden liquors with exceptional aroma, while mid- and low-grown teas deliver the robust body and malty sweetness preferred in many international markets. Learn more about <a href="/ceylon-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors font-medium">Ceylon tea elevations and history</a>.
-            </p>
-            <p>
-              Beyond black tea, we also offer <a href="/our-tea/green-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors font-medium">pure green tea from Sri Lanka</a> and <a href="/our-tea/flavoured-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors font-medium">aromatic flavoured tea blends</a>. Whether you need bulk supply or <a href="/branding" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors font-medium">custom tea branding in Sri Lanka</a>, our master blenders can craft the perfect profile for your market.
-            </p>
-          </div>
-        </div>
-      </section>
+
 
       {/* Tea Grid Section */}
       <section className="relative px-6 py-32 bg-white">
@@ -134,6 +126,15 @@ export default async function OurTeaPage() {
         </div>
 
         <div className="container relative z-10 mx-auto max-w-7xl">
+          <div className="text-center mb-20">
+            <h2 className="text-3xl md:text-4xl font-semibold text-neutral-900 tracking-tight mb-4">
+              Full Tea Catalogue
+            </h2>
+            <p className="text-lg text-neutral-500 max-w-2xl mx-auto">
+              Browse our complete range of Ceylon teas — filter by category to find exactly what you need.
+            </p>
+          </div>
+
           <Tabs defaultValue="all" className="w-full">
             <div className="flex justify-center mb-20">
               <div className="overflow-x-auto pb-4 px-4 w-full flex justify-center no-scrollbar">

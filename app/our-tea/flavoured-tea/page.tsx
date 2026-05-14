@@ -129,7 +129,7 @@ export default async function FlavouredTeaPage() {
             </h2>
             <div className="space-y-6 text-lg text-neutral-600 leading-relaxed">
               <p>
-                Flavoured tea in Sri Lanka represents the perfect marriage between the island&apos;s world-renowned Ceylon tea base and the art of aromatic infusion. Using premium <Link href="/our-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors font-medium">orthodox black tea from Sri Lanka</Link> as the foundation, our master blenders create harmonious flavour profiles that complement — rather than mask — the distinctive Ceylon tea character.
+                Flavoured tea in Sri Lanka represents the perfect marriage between the island&apos;s world-renowned Ceylon tea base and the art of aromatic infusion. Using premium <Link href="/our-tea/black-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors font-medium">orthodox black tea from Sri Lanka</Link> as the foundation, our master blenders create harmonious flavour profiles that complement — rather than mask — the distinctive Ceylon tea character.
               </p>
               <p>
                 Sri Lanka&apos;s flavoured tea tradition draws from the island&apos;s incredible biodiversity. Ceylon cinnamon from the southern lowlands, cardamom from the hill country, vanilla from the wet zone, and tropical fruits from across the island all contribute to our blending palette. This natural advantage, combined with our proximity to spice-growing regions, makes flavoured tea in Sri Lanka uniquely authentic and aromatic.

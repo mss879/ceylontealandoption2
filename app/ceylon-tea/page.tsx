@@ -237,7 +237,7 @@ export default function CeylonTeaPage() {
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-4 mb-16">
-                        <Link href="/our-tea" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-all backdrop-blur-md">
+                        <Link href="/our-tea/black-tea" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-all backdrop-blur-md">
                             <Leaf className="w-4 h-4 text-[#d9b482]" />
                             Black Tea from Sri Lanka
                         </Link>

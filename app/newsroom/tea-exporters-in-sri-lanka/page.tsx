@@ -155,7 +155,7 @@ export default function TeaExportersGuide() {
                   Ceylon tea grades indicate the size and style of the processed leaf — not the quality. However, different grades suit different applications, and a knowledgeable exporter should be able to advise you on the best grade for your target market.
                 </p>
                 <p>
-                  The most commonly exported <Link href="/our-tea" className="text-[#b58b54] underline decoration-[#b58b54]/40 hover:decoration-[#b58b54]">black tea grades from Sri Lanka</Link> include:
+                  The most commonly exported <Link href="/our-tea/black-tea" className="text-[#b58b54] underline decoration-[#b58b54]/40 hover:decoration-[#b58b54]">black tea grades from Sri Lanka</Link> include:
                 </p>
                 <ul className="space-y-3">
                   <li><strong>OP (Orange Pekoe)</strong> — Long, wiry whole leaves. Premium appearance, delicate cup. Ideal for loose-leaf retail.</li>

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata = {
-    title: "History of Ceylon Tea — Elevations, Regions & 150 Years of Heritage",
+    title: "Ceylon Tea — History, Elevations & Tea Regions of Sri Lanka",
     description: "Discover 150+ years of Ceylon tea heritage — from James Taylor's first estate to Sri Lanka's three distinct elevation terroirs.",
     keywords: ["Ceylon Tea History", "Tea Elevations Sri Lanka", "High Grown Ceylon Tea", "Mid Grown Tea", "Low Grown Tea", "Nuwara Eliya Tea", "James Taylor Tea Pioneer", "Colombo Tea Auction", "Single Origin Ceylon Tea"],
     authors: [{ name: "Ceylon Tea Land" }],
@@ -17,7 +17,7 @@ export const metadata = {
         siteName: "Ceylon Tea Land",
         images: [
             {
-                url: "https://ceylontealand.com/about_hero_tea_estate.png",
+                url: "https://ceylontealand.com/about_hero_tea_estate.webp",
                 width: 1200,
                 height: 630,
                 alt: "The Legacy of Ceylon Tea — Tea Estates and Terroirs of Sri Lanka",
@@ -30,7 +30,7 @@ export const metadata = {
         card: "summary_large_image",
         title: "History of Ceylon Tea — Elevations & Terroirs | Ceylon Tea Land",
         description: "Discover 150+ years of Ceylon tea heritage and Sri Lanka's three distinct elevation terroirs.",
-        images: ["https://ceylontealand.com/about_hero_tea_estate.png"],
+        images: ["https://ceylontealand.com/about_hero_tea_estate.webp"],
     },
 };
 
@@ -62,19 +62,19 @@ const elevations = [
         title: "High Grown (Up-Country)",
         subtitle: "Over 4,000 ft",
         desc: "Produces the most exquisitely flavored teas, celebrated for their golden liquor, intense aroma, and delicate, brisk taste. Nuwara Eliya and Uva regions are renowned.",
-        img: "/elevation_high.png"
+        img: "/elevation_high.webp"
     },
     {
         title: "Mid Grown (Mid-Country)",
         subtitle: "2,000 to 4,000 ft",
         desc: "Yields teas with a robust character, rich flavor, and good color. These full-bodied, malty varieties often come from the Kandy region.",
-        img: "/elevation_mid.png"
+        img: "/elevation_mid.webp"
     },
     {
         title: "Low Grown (Low-Country)",
         subtitle: "Sea level to 2,000 ft",
         desc: "Subjected to high sunshine and warmth, producing a burgundy brown liquor and a heavy, robust taste, featuring visually impressive leaf appearances.",
-        img: "/elevation_low.png"
+        img: "/elevation_low.webp"
     }
 ];
 
@@ -97,7 +97,7 @@ export default function CeylonTeaPage() {
             {/* 1. Hero Section */}
             <section className="relative min-h-screen overflow-hidden flex items-end rounded-b-[60px] shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
                 <Image
-                    src="/about_hero_tea_estate.png"
+                    src="/about_hero_tea_estate.webp"
                     alt="Lush green tea estates stretching across the hills of Sri Lanka"
                     fill
                     className="object-cover"
@@ -232,9 +232,24 @@ export default function CeylonTeaPage() {
                         The Gold Standard of <br /><span className="font-serif italic text-[#d9b482]">Global Export</span>
                     </h2>
 
-                    <p className="text-lg md:text-xl leading-relaxed text-neutral-400 max-w-3xl mx-auto mb-16">
+                    <p className="text-lg md:text-xl leading-relaxed text-neutral-400 max-w-3xl mx-auto mb-10">
                         Ozone-friendly, hand-picked, and manufactured following orthodox methods. The reputation of Ceylon Tea was built on relentless quality controls and an authentic supply chain stretching from central highlands over the Indian Ocean to the world.
                     </p>
+
+                    <div className="flex flex-wrap justify-center gap-4 mb-16">
+                        <Link href="/our-tea" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-all backdrop-blur-md">
+                            <Leaf className="w-4 h-4 text-[#d9b482]" />
+                            Black Tea from Sri Lanka
+                        </Link>
+                        <Link href="/our-tea/green-tea" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-all backdrop-blur-md">
+                            <Leaf className="w-4 h-4 text-emerald-400" />
+                            Green Tea in Sri Lanka
+                        </Link>
+                        <Link href="/our-tea/flavoured-tea" className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10 transition-all backdrop-blur-md">
+                            <Leaf className="w-4 h-4 text-[#f9a8d4]" />
+                            Flavoured Tea Blends
+                        </Link>
+                    </div>
 
                     <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto border-t border-white/10 pt-16">
                         <div className="flex flex-col items-center">

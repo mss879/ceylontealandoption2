@@ -3,16 +3,16 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Leaf } from 'lucide-react'
 
 export const metadata = {
-  title: "Ceylon Tea Grades — Black, Green & Flavoured Tea Catalogue",
-  description: "Explore our collection of premium Ceylon tea grades — robust BOP and BOPF black teas, delicate green teas, and aromatic flavoured blends.",
-  keywords: ["Ceylon Tea Grades", "BOP Tea Grade", "BOPF Tea", "Green Tea Sri Lanka", "Flavoured Ceylon Tea", "Loose Leaf Ceylon Tea", "Ceylon Tea Wholesale Catalog"],
+  title: "Black Tea in Sri Lanka | Premium Ceylon Black Tea Grades — Ceylon Tea Land",
+  description: "Discover premium black tea from Sri Lanka — BOP, BOPF, and OP grades sourced from highland estates. Browse our full catalogue of Ceylon black tea, green tea, and flavoured blends for wholesale and retail.",
+  keywords: ["black tea in Sri Lanka", "black tea", "Ceylon black tea", "BOP tea grade", "BOPF tea", "green tea Sri Lanka", "flavoured Ceylon tea", "Ceylon tea wholesale catalog"],
   authors: [{ name: "Ceylon Tea Land" }],
   alternates: {
     canonical: "/our-tea",
   },
   openGraph: {
-    title: "Ceylon Tea Grades — Full Collection | Ceylon Tea Land",
-    description: "Explore our extensive collection of premium Ceylon tea grades — black, green, and flavoured teas for wholesale and retail.",
+    title: "Black Tea in Sri Lanka — Premium Ceylon Tea Grades | Ceylon Tea Land",
+    description: "Discover premium black tea from Sri Lanka — BOP, BOPF, and OP grades. Full catalogue of Ceylon black tea, green tea, and flavoured teas.",
     url: "https://ceylontealand.com/our-tea",
     siteName: "Ceylon Tea Land",
     images: [
@@ -20,7 +20,7 @@ export const metadata = {
         url: "https://ceylontealand.com/heroimg.webp",
         width: 1200,
         height: 630,
-        alt: "Ceylon Tea Grades — Premium Black, Green & Flavoured Teas from Ceylon Tea Land",
+        alt: "Black Tea in Sri Lanka — Premium Ceylon Black Tea, Green Tea & Flavoured Teas from Ceylon Tea Land",
       },
     ],
     locale: "en_US",
@@ -28,8 +28,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ceylon Tea Grades — Full Collection | Ceylon Tea Land",
-    description: "Robust BOP black teas, delicate green teas, and aromatic flavoured blends from Sri Lanka.",
+    title: "Black Tea in Sri Lanka — Ceylon Tea Grades | Ceylon Tea Land",
+    description: "Premium black tea from Sri Lanka. BOP, BOPF and OP grades plus green tea and flavoured blends.",
     images: ["https://ceylontealand.com/heroimg.webp"],
   },
 };
@@ -93,12 +93,36 @@ export default async function OurTeaPage() {
             Our Collection
           </div>
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-light leading-[1.05] tracking-tight text-white mb-8">
-            The Finest <br className="hidden md:block" /> <span className="font-serif italic text-[#b58b54]">Ceylon Tea Grades</span>
+            Premium Black Tea <br className="hidden md:block" /> <span className="font-serif italic text-[#b58b54]">from Sri Lanka</span>
           </h1>
           <p className="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto leading-relaxed font-light">
-            From the misty hills of Sri Lanka to your cup. Explore our extensive collection of premium tea grades,
-            ranging from robust black teas to delicate green teas and aromatic blends.
+            From the misty hills of Sri Lanka to your cup. Explore our extensive collection of premium Ceylon black tea grades,
+            alongside our curated <a href="/our-tea/green-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54]">green tea</a> and <a href="/our-tea/flavoured-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54]">flavoured tea</a> collections.
           </p>
+        </div>
+      </section>
+
+      {/* Black Tea Content Section — SEO */}
+      <section className="bg-[#f4f1ea] py-20 lg:py-24 border-b border-[#ead9bc]">
+        <div className="max-w-4xl mx-auto px-6">
+          <div className="flex items-center gap-3 text-sm font-medium uppercase tracking-[0.2em] text-[#b58b54] mb-6">
+            <Leaf className="w-4 h-4" />
+            <span>About Our Black Tea</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-semibold text-neutral-900 leading-tight tracking-tight mb-8">
+            Black Tea from Sri Lanka&apos;s Highland Estates
+          </h2>
+          <div className="space-y-5 text-lg text-neutral-600 leading-relaxed">
+            <p>
+              Sri Lanka produces some of the world&apos;s finest black tea, cultivated across three distinct elevation zones that each impart unique flavour characteristics. As one of the leading <a href="/" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors font-medium">tea exporters in Sri Lanka</a>, Ceylon Tea Land offers the complete range of orthodox black tea grades — from the brisk, aromatic <strong>BOP (Broken Orange Pekoe)</strong> to the full-bodied <strong>BOPF (Broken Orange Pekoe Fannings)</strong> and the elegant wiry-leaf <strong>OP (Orange Pekoe)</strong>.
+            </p>
+            <p>
+              Our black tea is sourced from Nuwara Eliya, Dimbula, Uva, and Sabaragamuwa regions — each recognised for their distinctive terroir. High-grown teas above 4,000 ft produce the most delicate, golden liquors with exceptional aroma, while mid- and low-grown teas deliver the robust body and malty sweetness preferred in many international markets. Learn more about <a href="/ceylon-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors font-medium">Ceylon tea elevations and history</a>.
+            </p>
+            <p>
+              Beyond black tea, we also offer <a href="/our-tea/green-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors font-medium">pure green tea from Sri Lanka</a> and <a href="/our-tea/flavoured-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors font-medium">aromatic flavoured tea blends</a>. Whether you need bulk supply or <a href="/branding" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors font-medium">custom tea branding in Sri Lanka</a>, our master blenders can craft the perfect profile for your market.
+            </p>
+          </div>
         </div>
       </section>
 

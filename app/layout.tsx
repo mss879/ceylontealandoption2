@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: '%s | Ceylon Tea Land',
   },
   description: 'Global Exporters of Authentic Ceylon Tea. Partner with our estate network for fresh, hand-picked Ceylon tea delivered worldwide with reliable logistics and export-grade consistency.',
-  keywords: ['Ceylon Tea', 'Sri Lanka Tea', 'Ceylon Tea Land', 'Tea Exporter Sri Lanka', 'Premium Ceylon Tea'],
+  keywords: ['tea exporters in Sri Lanka', 'tea exporters', 'Ceylon Tea', 'black tea Sri Lanka', 'green tea Sri Lanka', 'flavoured tea Sri Lanka', 'tea branding Sri Lanka'],
   authors: [{ name: 'Ceylon Tea Land', url: 'https://ceylontealand.com' }],
   creator: 'Ceylon Tea Land',
   publisher: 'Ceylon Tea Land (Pvt) Ltd.',
@@ -89,7 +89,7 @@ const organizationJsonLd = {
   url: 'https://ceylontealand.com',
   logo: 'https://ceylontealand.com/clogo.png',
   description: 'Global Exporters of Authentic Ceylon Tea from Sri Lanka.',
-  foundingDate: '1975',
+  foundingDate: '2007',
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'No. 51, Fairfield Gardens',
@@ -110,6 +110,7 @@ const organizationJsonLd = {
     'https://www.facebook.com/drrumie',
     'https://www.instagram.com/ceylontealand',
   ],
+  knowsAbout: ['Tea export', 'Ceylon tea', 'Black tea', 'Green tea', 'Flavoured tea', 'Tea branding', 'Private label tea'],
 };
 
 const localBusinessJsonLd = {
@@ -117,7 +118,7 @@ const localBusinessJsonLd = {
   '@type': 'LocalBusiness',
   '@id': 'https://ceylontealand.com/#business',
   name: 'Ceylon Tea Land (Pvt) Ltd.',
-  image: 'https://ceylontealand.com/heroimg.png',
+  image: 'https://ceylontealand.com/heroimg.webp',
   url: 'https://ceylontealand.com',
   telephone: '+94-77-773-4180',
   email: 'info@ceylontealand.com',

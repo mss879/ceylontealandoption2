@@ -51,6 +51,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             priority: 0.8,
         },
         {
+            url: `${baseUrl}/our-tea/green-tea`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.85,
+        },
+        {
+            url: `${baseUrl}/our-tea/flavoured-tea`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.85,
+        },
+        {
             url: `${baseUrl}/about`,
             lastModified: new Date(),
             changeFrequency: "monthly",
@@ -67,6 +79,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
             lastModified: new Date(),
             changeFrequency: "weekly",
             priority: 0.7,
+        },
+        {
+            url: `${baseUrl}/newsroom/tea-exporters-in-sri-lanka`,
+            lastModified: new Date(),
+            changeFrequency: "monthly",
+            priority: 0.85,
         },
         {
             url: `${baseUrl}/contact`,

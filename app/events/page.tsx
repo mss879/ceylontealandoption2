@@ -57,15 +57,15 @@ export default async function EventsPage() {
 
     // Fallback static events if DB is empty or not seeded
     const fallbackEvents = [
-        { id: '1', title: "WORLD FOOD RUSSIA 2020", image: "/WORLD FOOD RUSSIA 2020.png", year: 2020 },
-        { id: '2', title: "WORLD FOOD RUSSIA 2021", image: "/WORLD FOOD RUSSIA 2021.png", year: 2021 },
-        { id: '3', title: "PRODEXPO MOSCOW RUSSIA 2022", image: "/PRODEXPO MOSCOW RUSSIA 2022.png", year: 2022 },
-        { id: '4', title: "GULFOOD DUBAI U.A.E 2022", image: "/GULFOOD DUBAI U.A.E 2022.png", year: 2022 },
-        { id: '5', title: "IFE EXCEL, LONDON MARCH 2022", image: "/IFE EXCEL, LONDON MARCH 2022.jpg", year: 2022 },
-        { id: '6', title: "HORECA LEBANON MARCH 2022", image: "/HORECA LEBANON MARCH 2022.jpg", year: 2022 },
-        { id: '7', title: "POLAND WARZSAW APRIL 2022", image: "/POLAND WARZSAW APRIL 2022.jpg", year: 2022 },
-        { id: '8', title: "CANADA MONTREAL APRIL 2022", image: "/CANADA MONTREAL APRIL 2022.jpg", year: 2022 },
-        { id: '9', title: "INTER FOOD AZERBAIJAN 2022", image: "/INTER FOOD AZERBAIJAN 2022.jpg", year: 2022 }
+        { id: '1', title: "WORLD FOOD RUSSIA 2020", image: "/WORLD FOOD RUSSIA 2020.webp", year: 2020 },
+        { id: '2', title: "WORLD FOOD RUSSIA 2021", image: "/WORLD FOOD RUSSIA 2021.webp", year: 2021 },
+        { id: '3', title: "PRODEXPO MOSCOW RUSSIA 2022", image: "/PRODEXPO MOSCOW RUSSIA 2022.webp", year: 2022 },
+        { id: '4', title: "GULFOOD DUBAI U.A.E 2022", image: "/GULFOOD DUBAI U.A.E 2022.webp", year: 2022 },
+        { id: '5', title: "IFE EXCEL, LONDON MARCH 2022", image: "/IFE EXCEL, LONDON MARCH 2022.webp", year: 2022 },
+        { id: '6', title: "HORECA LEBANON MARCH 2022", image: "/HORECA LEBANON MARCH 2022.webp", year: 2022 },
+        { id: '7', title: "POLAND WARZSAW APRIL 2022", image: "/POLAND WARZSAW APRIL 2022.webp", year: 2022 },
+        { id: '8', title: "CANADA MONTREAL APRIL 2022", image: "/CANADA MONTREAL APRIL 2022.webp", year: 2022 },
+        { id: '9', title: "INTER FOOD AZERBAIJAN 2022", image: "/INTER FOOD AZERBAIJAN 2022.webp", year: 2022 }
     ];
 
     const sourceEvents = (events && events.length > 0) ? events : fallbackEvents;

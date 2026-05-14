@@ -19,9 +19,10 @@ const footerNavColumns = [
     {
         title: 'Products',
         links: [
-            { label: 'Tea Bags', href: '/our-tea' },
-            { label: 'Bulk Tea', href: '/our-tea' },
-            { label: 'Green Tea', href: '/our-tea' },
+            { label: 'Black Tea', href: '/our-tea' },
+            { label: 'Green Tea', href: '/our-tea/green-tea' },
+            { label: 'Flavoured Tea', href: '/our-tea/flavoured-tea' },
+            { label: 'Tea Branding', href: '/branding' },
         ],
     },
     {
@@ -63,7 +64,7 @@ export function Footer() {
 
                     <div className="tea-footer__banner-right">
                         <Image
-                            src="/tea_footer_banner.png"
+                            src="/tea_footer_banner.webp"
                             alt="Pouring Ceylon Tea"
                             width={600}
                             height={400}

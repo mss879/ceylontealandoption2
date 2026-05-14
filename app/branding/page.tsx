@@ -3,16 +3,16 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export const metadata = {
-    title: "Private Label Ceylon Tea — White Label & OEM Tea Manufacturing",
-    description: "Launch your tea brand with Ceylon Tea Land's estate network. Custom packaging, export-grade tea, and turnkey private label solutions.",
-    keywords: ["Private Label Ceylon Tea", "White Label Tea Sri Lanka", "OEM Tea Manufacturing", "Custom Tea Packaging", "Tea Brand Development", "Tea Contract Manufacturing"],
+    title: "Tea Branding in Sri Lanka | Private Label & White Label Tea Services — Ceylon Tea Land",
+    description: "Premier tea branding services in Sri Lanka. Launch your own tea brand with private label, white label, and custom packaging solutions from Ceylon Tea Land's highland estates.",
+    keywords: ["tea branding in Sri Lanka", "tea branding", "private label tea Sri Lanka", "white label tea", "custom tea brand Sri Lanka", "OEM tea manufacturing", "tea packaging Sri Lanka"],
     authors: [{ name: "Ceylon Tea Land" }],
     alternates: {
         canonical: "/branding",
     },
     openGraph: {
-        title: "Private Label Ceylon Tea — White Label Solutions | Ceylon Tea Land",
-        description: "Launch your premium tea brand with our estate network. Custom packaging and turnkey private label solutions.",
+        title: "Tea Branding in Sri Lanka — Private Label & White Label Solutions | Ceylon Tea Land",
+        description: "Premier tea branding services in Sri Lanka. Launch your own tea brand with private label, white label, and custom packaging solutions.",
         url: "https://ceylontealand.com/branding",
         siteName: "Ceylon Tea Land",
         images: [
@@ -20,7 +20,7 @@ export const metadata = {
                 url: "https://ceylontealand.com/branding-hero.webp",
                 width: 1200,
                 height: 630,
-                alt: "Private Label Ceylon Tea Branding — Custom Packaging Solutions",
+                alt: "Tea Branding in Sri Lanka — Private Label and Custom Packaging Solutions",
             },
         ],
         locale: "en_US",
@@ -28,8 +28,8 @@ export const metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Private Label Ceylon Tea — White Label Solutions | Ceylon Tea Land",
-        description: "Launch your premium tea brand with our estate network and turnkey private label solutions.",
+        title: "Tea Branding in Sri Lanka — Private Label & White Label Solutions | Ceylon Tea Land",
+        description: "Premier tea branding in Sri Lanka. Launch your own tea brand with private label and custom packaging solutions.",
         images: ["https://ceylontealand.com/branding-hero.webp"],
     },
 };
@@ -38,12 +38,12 @@ const processSteps = [
     {
         title: 'Select Your Blend',
         description: 'Work with our master blenders to choose from our export-grade single-origin teas, or craft a signature profile unique to your brand.',
-        image: '/tea_blending_process.png',
+        image: '/tea_blending_process.webp',
     },
     {
         title: 'Design & Packaging',
         description: 'We offer an array of premium, unbranded packaging from minimalist tins to elegant pouches. Bring your design to life to match your brand&apos;s ethos.',
-        image: '/custom_packaging_showcase.png',
+        image: '/custom_packaging_showcase.webp',
     },
     {
         title: 'Quality Production',
@@ -93,8 +93,8 @@ export default function BrandingPage() {
                                 White Label & Private Branding
                             </div>
                             <h1 className="text-4xl md:text-5xl lg:text-7xl font-light leading-tight tracking-tight text-white drop-shadow-lg">
-                                Your Brand. <br />
-                                <span className="font-serif italic text-[#d9b482]">Our Legacy.</span>
+                                Tea Branding in Sri Lanka <br />
+                                <span className="font-serif italic text-[#d9b482]">Your Brand, Our Legacy</span>
                             </h1>
                             <p className="text-base md:text-lg lg:text-xl leading-relaxed text-neutral-300 max-w-xl font-light">
                                 Launch your premium tea brand with our world-class estate network. Export-grade Ceylon tea, elegantly packaged and ready for the global stage.
@@ -132,14 +132,14 @@ export default function BrandingPage() {
                                 <span>The Partnership</span>
                             </div>
                             <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-neutral-900 leading-[1.1] tracking-tight">
-                                Turnkey Solutions for Visionary Brands.
+                                Turnkey Tea Branding Solutions for Visionary Brands
                             </h2>
                             <div className="space-y-6 text-lg text-neutral-600 leading-relaxed">
                                 <p>
-                                    Building a tea brand from scratch requires navigating complex supply chains, quality control, and international logistics. We remove these barriers.
+                                    Tea branding in Sri Lanka offers a unique advantage — direct access to the world&apos;s most celebrated single-origin tea at the source. Building a tea brand from scratch requires navigating complex supply chains, quality control, and international logistics. We remove these barriers.
                                 </p>
                                 <p>
-                                    As an established Sri Lankan exporter, we grant you direct access to highland estates and our state-of-the-art manufacturing facilities. Whether you need bulk wholesale or fully packaged retail-ready products, our wholesale branding service operates as a seamless extension of your business.
+                                    As an established Sri Lankan tea exporter with nearly 2 decades of experience, we grant you direct access to highland estates and our state-of-the-art manufacturing facilities. Whether you need bulk wholesale or fully packaged retail-ready products, our tea branding service operates as a seamless extension of your business.
                                 </p>
                             </div>
 
@@ -167,7 +167,7 @@ export default function BrandingPage() {
 
                         <div className="relative h-[600px] w-full rounded-[2.5rem] overflow-hidden shadow-[0_40px_80px_rgba(0,0,0,0.1)] group">
                             <Image
-                                src="/tea_blending_process.png"
+                                src="/tea_blending_process.webp"
                                 alt="Master tea blender"
                                 fill
                                 className="object-cover group-hover:scale-105 transition-transform duration-1000"

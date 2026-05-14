@@ -4,16 +4,16 @@ import Image from 'next/image';
 import { CuratedProducts } from '@/components/curated-products';
 import { Preloader } from '@/components/Preloader';
 export const metadata = {
-  title: "Premium Ceylon Tea Exporters from Sri Lanka | Ceylon Tea Land",
-  description: "Global exporters of authentic Ceylon tea. Partner with our Sri Lankan estate network for fresh, hand-picked tea delivered worldwide.",
-  keywords: ["Ceylon Tea Exporter", "Premium Ceylon Tea", "Sri Lanka Tea Export", "Bulk Tea Supplier", "Tea Bags Manufacturer Sri Lanka", "Ceylon Tea Wholesale"],
+  title: "Tea Exporters in Sri Lanka | Premium Ceylon Tea Suppliers — Ceylon Tea Land",
+  description: "Leading tea exporters in Sri Lanka. Ceylon Tea Land supplies premium black tea, green tea, and flavoured tea directly from highland estates to 40+ countries worldwide.",
+  keywords: ["tea exporters in Sri Lanka", "tea exporters", "Ceylon tea exporters", "tea suppliers Sri Lanka", "bulk tea exporters", "Sri Lanka tea company", "black tea Sri Lanka", "green tea exporters"],
   authors: [{ name: "Ceylon Tea Land" }],
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "Ceylon Tea Land — Premium Ceylon Tea Exporters from Sri Lanka",
-    description: "Global exporters of authentic Ceylon tea. Partner with our estate network for fresh, hand-picked tea delivered worldwide.",
+    title: "Tea Exporters in Sri Lanka — Premium Ceylon Tea Suppliers | Ceylon Tea Land",
+    description: "Leading tea exporters in Sri Lanka. Premium black tea, green tea, and flavoured tea delivered from highland estates to 40+ countries.",
     url: "https://ceylontealand.com",
     siteName: "Ceylon Tea Land",
     images: [
@@ -21,7 +21,7 @@ export const metadata = {
         url: "https://ceylontealand.com/heroimg.webp",
         width: 1200,
         height: 630,
-        alt: "Ceylon Tea Land — Premium Ceylon Tea Exporters from Sri Lanka",
+        alt: "Ceylon Tea Land — Leading Tea Exporters in Sri Lanka",
       },
     ],
     locale: "en_US",
@@ -29,8 +29,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ceylon Tea Land — Premium Ceylon Tea Exporters from Sri Lanka",
-    description: "Global exporters of authentic Ceylon tea. Fresh, hand-picked tea delivered worldwide.",
+    title: "Tea Exporters in Sri Lanka — Premium Ceylon Tea Suppliers | Ceylon Tea Land",
+    description: "Leading tea exporters in Sri Lanka. Premium black tea, green tea, and flavoured tea from highland estates.",
     images: ["https://ceylontealand.com/heroimg.webp"],
   },
 };
@@ -60,16 +60,28 @@ const teaHighlights = [
 
 const teaBenefits = [
   {
-    icon: Leaf,
-    title: 'Sustainable Practices',
+    icon: Globe,
+    title: 'Exporting to 40+ Countries',
     description:
-      'Our commitment to environmental responsibility ensures future generations can enjoy Ceylon tea.',
+      'As established tea exporters in Sri Lanka, we supply premium Ceylon tea to distributors, retailers, and hospitality brands across Russia, the Middle East, Europe, North America, and Central Asia.',
   },
   {
     icon: Award,
-    title: 'Award-Winning Quality',
+    title: 'ISO & Tea Board Certified',
     description:
-      'Recognized internationally for our exceptional tea quality and innovative blending techniques.',
+      'Our manufacturing facilities hold ISO 22000 and HACCP certifications. Every shipment carries the Sri Lanka Tea Board\'s Lion Logo — your guarantee of authentic Ceylon tea.',
+  },
+  {
+    icon: Leaf,
+    title: 'Full Product Range',
+    description:
+      'From robust BOP and BOPF black tea to antioxidant-rich green tea and aromatic flavoured blends — we export the complete spectrum of Ceylon tea grades.',
+  },
+  {
+    icon: Heart,
+    title: 'Nearly 2 Decades of Heritage',
+    description:
+      'Founded in 2007, Ceylon Tea Land has grown into one of Sri Lanka\'s most trusted tea exporters, combining generational expertise with modern quality systems.',
   },
 ];
 
@@ -181,6 +193,14 @@ const homepageFaqJsonLd = {
     },
     {
       '@type': 'Question',
+      name: 'Who are the best tea exporters in Sri Lanka?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ceylon Tea Land is among the leading tea exporters in Sri Lanka with nearly 2 decades of experience. Based in Colombo, we export premium black tea, green tea, and flavoured tea to 40+ countries worldwide. Our estate network spans all three elevation zones, ensuring consistent quality and supply.',
+      },
+    },
+    {
+      '@type': 'Question',
       name: 'How can I import Ceylon tea in bulk?',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -211,7 +231,41 @@ const homepageFaqJsonLd = {
         text: 'Ceylon Tea Land exports to over 40 countries worldwide, including Russia, the Middle East, Europe, North America, and Central Asia. We have a strong international presence with regular participation in exhibitions like GULFOOD, PRODEXPO, and IFE London.',
       },
     },
+    {
+      '@type': 'Question',
+      name: 'How to find tea exporters in Sri Lanka?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The best way to find reliable tea exporters in Sri Lanka is to look for companies registered with the Sri Lanka Tea Board and those that regularly participate in international trade shows like GULFOOD and PRODEXPO. Ceylon Tea Land is a registered exporter with ISO certifications, exporting premium Ceylon tea since 2007.',
+      },
+    },
   ],
+};
+
+const exportServiceJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Ceylon Tea Export Services',
+  description: 'Premium tea export services from Sri Lanka. Bulk loose-leaf tea, retail-ready tea bags, and private label tea branding for global markets.',
+  provider: {
+    '@type': 'Organization',
+    name: 'Ceylon Tea Land (Pvt) Ltd.',
+    url: 'https://ceylontealand.com',
+  },
+  areaServed: {
+    '@type': 'Place',
+    name: 'Worldwide — 40+ countries',
+  },
+  serviceType: 'Tea Export',
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+    priceCurrency: 'USD',
+    eligibleRegion: {
+      '@type': 'Place',
+      name: 'Global',
+    },
+  },
 };
 
 export default function Home() {
@@ -222,11 +276,15 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(homepageFaqJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(exportServiceJsonLd) }}
+      />
       <main className="bg-white text-neutral-900">
         <section className="relative min-h-screen overflow-hidden flex items-end rounded-b-[60px] shadow-[0_30px_80px_rgba(0,0,0,0.35)]">
           <Image
             src="/heroimg.webp"
-            alt="Scenic tea fields in the highlands of Sri Lanka"
+            alt="Tea plantations in Sri Lanka highlands — Ceylon Tea Land, leading tea exporters in Sri Lanka"
             fill
             className="object-cover"
             priority
@@ -237,29 +295,30 @@ export default function Home() {
             <div className="max-w-3xl">
               <div className="space-y-6 md:space-y-8 rounded-[2rem] bg-white/85 p-6 md:p-8 text-neutral-900 shadow-xl backdrop-blur-md animate-in fade-in slide-in-from-bottom-8 duration-1000 mx-auto md:mx-0">
                 <div className="space-y-4">
-                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-neutral-900">
-                    Ceylon Tea Exporters <br /> Direct from Sri Lanka
+                  <h1 className="text-4xl md:text-5xl lg:text-[56px] font-bold leading-[1.15] tracking-tight text-neutral-900">
+                    <span className="block text-sm md:text-base lg:text-lg font-bold text-[#b58b54] mb-4 uppercase tracking-[0.2em]">Premium Ceylon Tea</span>
+                    Tea Exporters in <span className="whitespace-nowrap">Sri Lanka</span>
                   </h1>
                   <p className="text-base md:text-lg leading-relaxed text-neutral-700">
-                    Source 100% pure, hand-picked Ceylon tea directly from Sri Lanka&apos;s finest estates. We guarantee export-grade consistency, unmatched freshness, and seamless global logistics for your brand.
+                    As trusted tea exporters in Sri Lanka, we supply 100% pure, hand-picked Ceylon tea directly from highland estates. We guarantee export-grade consistency, unmatched freshness, and seamless global logistics for your brand across 40+ countries.
                   </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4">
+                <div className="flex flex-col sm:flex-row flex-wrap gap-3 md:gap-4 pt-2">
                   <Link
                     href="/our-tea"
-                    className="group inline-flex justify-center items-center gap-3 rounded-full bg-neutral-900 px-8 py-4 text-white transition-all duration-300 hover:scale-105 hover:bg-neutral-800 hover:shadow-xl hover:shadow-neutral-500/20 w-full sm:w-auto"
+                    className="group inline-flex justify-center items-center gap-2.5 rounded-full bg-neutral-900 px-6 py-3 md:px-7 md:py-3.5 text-white transition-all duration-300 hover:scale-105 hover:bg-neutral-800 hover:shadow-xl hover:shadow-neutral-500/20 w-full sm:w-auto"
                   >
-                    <span className="font-semibold text-lg">Our Tea</span>
-                    <div className="relative w-6 h-6 overflow-hidden hidden sm:block">
-                      <ArrowRight className="absolute w-6 h-6 text-white transition-transform duration-300 group-hover:translate-x-8 group-hover:-translate-y-8" />
-                      <ArrowRight className="absolute w-6 h-6 -translate-x-8 translate-y-8 text-white transition-transform duration-300 group-hover:translate-x-0 group-hover:translate-y-0" />
+                    <span className="font-semibold text-base">Our Tea</span>
+                    <div className="relative w-5 h-5 overflow-hidden hidden sm:block">
+                      <ArrowRight className="absolute w-5 h-5 text-white transition-transform duration-300 group-hover:translate-x-6 group-hover:-translate-y-6" />
+                      <ArrowRight className="absolute w-5 h-5 -translate-x-6 translate-y-6 text-white transition-transform duration-300 group-hover:translate-x-0 group-hover:translate-y-0" />
                     </div>
                   </Link>
 
                   <Link
                     href="/contact"
-                    className="inline-flex justify-center items-center gap-3 rounded-full border border-neutral-900 px-8 py-4 text-lg font-semibold text-neutral-900 transition-all duration-300 hover:bg-neutral-900 hover:text-white w-full sm:w-auto"
+                    className="inline-flex justify-center items-center gap-2.5 rounded-full border border-neutral-900 px-6 py-3 md:px-7 md:py-3.5 text-base font-semibold text-neutral-900 transition-all duration-300 hover:bg-neutral-900 hover:text-white w-full sm:w-auto"
                   >
                     Contact Us
                   </Link>
@@ -286,7 +345,7 @@ export default function Home() {
                   </div>
 
                   <h2 className="text-4xl md:text-5xl font-semibold text-neutral-900">
-                    Why Choose Ceylon Tea Land
+                    Why Choose Sri Lanka&apos;s Leading Tea Exporters
                   </h2>
 
                   <div className="flex flex-wrap gap-4">
@@ -303,26 +362,33 @@ export default function Home() {
 
                 <div className="space-y-6 text-base leading-relaxed text-neutral-600">
                   <p>
-                    We bring you the authentic taste of <Link href="/ceylon-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors">Sri Lanka&rsquo;s finest Ceylon tea</Link>, cultivated with care and
-                    passion in our island&rsquo;s highland estates. <Link href="/our-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors">Explore our tea grades</Link> and experience the difference that generations of
-                    expertise makes.
+                    As one of the most established tea exporters in Sri Lanka, we bring you the authentic taste of <Link href="/ceylon-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors">Sri Lanka&rsquo;s finest Ceylon tea</Link>, cultivated with care and
+                    passion in our island&rsquo;s highland estates. Since 2007, we have built direct relationships with plantation owners across Nuwara Eliya, Dimbula, Uva, and Sabaragamuwa — giving us access to the finest seasonal harvests at source.
                   </p>
-                  <div className="space-y-4">
-                    {teaBenefits.map((benefit) => {
-                      const Icon = benefit.icon;
-                      return (
-                        <div key={benefit.title} className="flex items-start gap-3">
-                          <Icon className="mt-1 h-5 w-5 flex-shrink-0 text-[#b58b54]" />
-                          <div className="space-y-1">
-                            <h3 className="text-sm font-semibold text-neutral-900 md:text-base">
-                              {benefit.title}
-                            </h3>
-                            <p className="text-sm text-neutral-600 md:text-base">{benefit.description}</p>
-                          </div>
+                  <p>
+                    Explore our <Link href="/our-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors">premium black tea grades</Link>, <Link href="/our-tea/green-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors">pure green tea from Sri Lanka</Link>, and <Link href="/our-tea/flavoured-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors">aromatic flavoured tea blends</Link> — and experience the difference that generations of
+                    expertise makes. Whether you need bulk loose-leaf supply, retail-ready tea bags, or <Link href="/branding" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors">custom private label branding</Link>, our team manages the entire chain from harvest to doorstep.
+                  </p>
+                </div>
+
+                {/* Spanning full width for benefits */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:col-span-2 pt-8 lg:pt-4 mt-2 lg:mt-0 border-t border-[#ead9bc]/30 lg:border-t-0">
+                  {teaBenefits.map((benefit) => {
+                    const Icon = benefit.icon;
+                    return (
+                      <div key={benefit.title} className="flex items-start gap-4">
+                        <div className="w-10 h-10 rounded-full bg-[#f4f1ea] flex items-center justify-center flex-shrink-0 border border-[#ead9bc]/50">
+                          <Icon className="h-5 w-5 text-[#b58b54]" />
                         </div>
-                      );
-                    })}
-                  </div>
+                        <div className="space-y-1.5 mt-1">
+                          <h3 className="text-base font-semibold text-neutral-900 leading-snug">
+                            {benefit.title}
+                          </h3>
+                          <p className="text-sm text-neutral-600 leading-relaxed max-w-md">{benefit.description}</p>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
 
@@ -364,9 +430,9 @@ export default function Home() {
           </div>
 
           <div className="relative z-10 mx-auto max-w-6xl px-6 text-center text-white">
-            <h2 className="text-5xl font-semibold tracking-tight md:text-6xl">OUR EXCLUSIVE BRAND&apos;S</h2>
+            <h2 className="text-5xl font-semibold tracking-tight md:text-6xl">OUR EXCLUSIVE BRANDS</h2>
             <p className="mx-auto mt-5 max-w-3xl text-base text-neutral-300">
-              Discover the house brands that carry our heritage to tables around the world. Each label reflects the
+              As leading tea exporters in Sri Lanka, we have developed our own premium house brands that carry our heritage to tables around the world. Each label reflects the
               craftsmanship and consistency that define Ceylon Tea Land.
             </p>
 
@@ -428,6 +494,70 @@ export default function Home() {
               </div>
             </div>
             
+          </div>
+        </section>
+
+        {/* Tea Exporters in Sri Lanka — Deep Content Section */}
+        <section className="bg-white text-neutral-900 py-24 lg:py-32 border-t border-[#ead9bc]">
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 lg:gap-20 items-start">
+              <div className="space-y-8">
+                <div className="inline-flex items-center gap-3 rounded-full border border-[#b58b54]/20 bg-[#f4f1ea] px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.3em] text-[#b58b54]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#b58b54] animate-pulse"></span>
+                  About Our Export Services
+                </div>
+
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-neutral-900 leading-tight tracking-tight">
+                  Trusted Tea Exporters in Sri Lanka Since 2007
+                </h2>
+
+                <div className="space-y-5 text-lg text-neutral-600 leading-relaxed text-justify">
+                  <p>
+                    Ceylon Tea Land is one of the most established tea exporters in Sri Lanka, with nearly two decades of experience connecting the island&rsquo;s finest tea estates with buyers worldwide. Based in Colombo, the heart of Sri Lanka&rsquo;s tea trade, we handle every aspect of the export process: sourcing, blending, quality control, packaging, documentation, and international logistics.
+                  </p>
+                  <p>
+                    What distinguishes us from other tea exporters in Sri Lanka is our vertically integrated approach. We maintain direct partnerships with plantation owners across all three elevation zones (Nuwara Eliya for high-grown, Kandy and Dimbula for mid-grown, and Sabaragamuwa and Ruhuna for low-grown), giving us unmatched access to the full diversity of Ceylon tea profiles.
+                  </p>
+                  <p>
+                    Our export portfolio includes <Link href="/our-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors font-medium">premium black tea grades</Link> (BOP, BOPF, OP, Pekoe), <Link href="/our-tea/green-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors font-medium">pure Ceylon green tea</Link>, and <Link href="/our-tea/flavoured-tea" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors font-medium">aromatic flavoured blends</Link>. We export in all formats, including bulk loose leaf in moisture-barrier sacks, retail-ready tea bags (string &amp; tag and pyramid), and fully branded consumer packs via our <Link href="/branding" className="underline decoration-[#b58b54]/40 hover:decoration-[#b58b54] transition-colors font-medium">private label tea branding service</Link>.
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-6">
+                <div className="rounded-[1.75rem] border border-[#ead9bc] bg-[#faf9f6] p-8 space-y-6">
+                  <h3 className="text-xl font-semibold text-neutral-900">Export Certifications</h3>
+                  <div className="space-y-4 text-base text-neutral-600">
+                    {[
+                      { cert: 'Sri Lanka Tea Board', detail: 'Registered exporter — Lion Logo certified' },
+                      { cert: 'ISO 22000:2018', detail: 'Food Safety Management Systems' },
+                      { cert: 'HACCP', detail: 'Hazard Analysis Critical Control Points' },
+                      { cert: 'GMP', detail: 'Good Manufacturing Practices' },
+                    ].map((item) => (
+                      <div key={item.cert} className="flex items-start gap-3">
+                        <Award className="w-5 h-5 mt-0.5 flex-shrink-0 text-[#b58b54]" />
+                        <div>
+                          <div className="font-semibold text-neutral-900">{item.cert}</div>
+                          <div className="text-sm text-neutral-500">{item.detail}</div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="rounded-[1.75rem] border border-[#ead9bc] bg-[#faf9f6] p-8 space-y-6">
+                  <h3 className="text-xl font-semibold text-neutral-900">Key Export Destinations</h3>
+                  <div className="flex flex-wrap gap-2">
+                    {['Russia', 'Iraq', 'Ukraine', 'Iran', 'Azerbaijan', 'UAE', 'Belarus', 'Bahrain', 'Turkey', 'Qatar', 'USA', 'Kuwait', 'Germany', 'Libya', 'Italy', 'Guinea', 'UK', 'Tajikistan'].map((country) => (
+                      <span key={country} className="inline-flex items-center gap-1.5 rounded-full border border-[#ead9bc] bg-white px-3.5 py-1.5 text-xs font-medium text-neutral-700">
+                        <Globe className="w-3 h-3 text-[#b58b54]" />
+                        {country}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -582,10 +712,10 @@ export default function Home() {
                 Tailored Deliveries
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-tight tracking-tight text-white">
-                Packaging <span className="font-semibold text-[#b58b54]">Options</span>
+                Export-Ready <span className="font-semibold text-[#b58b54]">Packaging Options</span>
               </h2>
               <p className="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto">
-                Whether you are stocking boutique shelves or supplying global distributors, we offer versatile, export-ready packaging formats tailored to your brand's requirements.
+                As versatile tea exporters in Sri Lanka, we offer a full range of export-ready packaging formats — whether you are stocking boutique shelves, supplying global distributors, or building your own private label brand.
               </p>
             </div>
 

@@ -3,8 +3,8 @@ import Image from 'next/image'
 import { Facebook, Instagram, Phone, Mail, MessageCircle, ArrowRight } from 'lucide-react'
 
 export const metadata = {
-  title: "About Ceylon Tea Land — 50+ Years of Sri Lankan Tea Excellence",
-  description: "Discover Ceylon Tea Land's legacy — over 50 years exporting pure Ceylon tea from Sri Lanka's finest highland estates to 40+ countries.",
+  title: "About Ceylon Tea Land — Nearly 2 Decades of Sri Lankan Tea Excellence",
+  description: "Discover Ceylon Tea Land's legacy — nearly 2 decades exporting pure Ceylon tea from Sri Lanka's finest highland estates to 40+ countries.",
   keywords: ["About Ceylon Tea Land", "Ceylon Tea Land Team", "Sri Lanka Tea Factory", "Tea Manufacturer Colombo", "Ceylon Tea Company", "Tea Export Sri Lanka"],
   authors: [{ name: "Ceylon Tea Land" }],
   alternates: {
@@ -12,7 +12,7 @@ export const metadata = {
   },
   openGraph: {
     title: "About Ceylon Tea Land — Our Story & Heritage",
-    description: "Discover Ceylon Tea Land's legacy — over 50 years exporting pure Ceylon tea to 40+ countries worldwide.",
+    description: "Discover Ceylon Tea Land's legacy — nearly 2 decades exporting pure Ceylon tea to 40+ countries worldwide.",
     url: "https://ceylontealand.com/about",
     siteName: "Ceylon Tea Land",
     images: [
@@ -29,7 +29,7 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "About Ceylon Tea Land — Our Story & Heritage",
-    description: "Discover Ceylon Tea Land's legacy — over 50 years exporting pure Ceylon tea to 40+ countries.",
+    description: "Discover Ceylon Tea Land's legacy — nearly 2 decades exporting pure Ceylon tea to 40+ countries.",
     images: ["https://ceylontealand.com/about-hero.webp"],
   },
 };
@@ -98,7 +98,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: '50', suffix: '+', label: 'Years of Excellence' },
+              { number: '15', suffix: '+', label: 'Years of Excellence' },
               { number: '50', suffix: '+', label: 'Tea Varieties' },
               { number: '40', suffix: '+', label: 'Countries Served' },
               { number: '100', suffix: '%', label: 'Pure Ceylon Tea' },
@@ -126,7 +126,7 @@ export default function AboutPage() {
               <div className="relative max-w-2xl mx-auto group">
                 <div className="absolute -inset-4 border-2 border-neutral-900/10 rounded-3xl -z-10 rotate-3 group-hover:rotate-6 transition-transform duration-500"></div>
                 <Image
-                  src="/premium_our_journey.png"
+                  src="/premium_our_journey.webp"
                   alt="Ceylon Tea Journey and Heritage"
                   width={800}
                   height={500}
@@ -149,7 +149,7 @@ export default function AboutPage() {
                 <div className="block lg:hidden">
                   <div className="relative max-w-xl mx-auto my-8">
                     <Image
-                      src="/premium_our_journey.png"
+                      src="/premium_our_journey.webp"
                       alt="Ceylon Tea Journey and Heritage"
                       width={800}
                       height={450}
@@ -250,7 +250,7 @@ export default function AboutPage() {
           </div>
           <div className="rounded-2xl overflow-hidden shadow-xl w-full mx-auto md:max-w-5xl bg-white border border-neutral-100 p-4">
             <Image
-              src="/about/export image.png"
+              src="/about/export image.webp"
               alt="Ceylon Tea Export Destinations - Global Map"
               width={1200}
               height={675}
@@ -276,9 +276,9 @@ export default function AboutPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-12">
             {[
-              { title: 'Freshest Ingredients', desc: 'Hand-plucked Ceylon Tea from the finest estates', img: '/premium_freshest_ingredients.png' },
-              { title: 'Master Blending', desc: 'Expert tea tasters creating perfect flavor profiles', img: '/premium_master_blending.png' },
-              { title: 'Authentic Experience', desc: 'Traditional Ceylon tea heritage in every cup', img: '/premium_authentic_experience.png' },
+              { title: 'Freshest Ingredients', desc: 'Hand-plucked Ceylon Tea from the finest estates', img: '/premium_freshest_ingredients.webp' },
+              { title: 'Master Blending', desc: 'Expert tea tasters creating perfect flavor profiles', img: '/premium_master_blending.webp' },
+              { title: 'Authentic Experience', desc: 'Traditional Ceylon tea heritage in every cup', img: '/premium_authentic_experience.webp' },
             ].map((item) => (
               <div key={item.title} className="text-center group">
                 <div className="w-40 h-40 bg-neutral-50 rounded-3xl flex items-center justify-center mx-auto mb-8 overflow-hidden transition-all duration-500 group-hover:-translate-y-6 group-hover:scale-110 relative shadow-lg border border-neutral-100">
@@ -434,7 +434,7 @@ export default function AboutPage() {
                   <Image src="/about_tea_plantation.webp" alt="Scenic Ceylon tea plantation with rows of tea bushes" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover hover:scale-105 transition-transform duration-300" />
                 </div>
                 <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
-                  <Image src="/premium_authentic_experience.png" alt="Traditional Ceylon tea ceremony experience" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover hover:scale-105 transition-transform duration-300" />
+                  <Image src="/premium_authentic_experience.webp" alt="Traditional Ceylon tea ceremony experience" fill sizes="(max-width: 768px) 50vw, 25vw" className="object-cover hover:scale-105 transition-transform duration-300" />
                 </div>
               </div>
               <div className="space-y-4 pt-8">
